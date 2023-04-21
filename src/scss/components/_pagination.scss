@@ -1,0 +1,33 @@
+.arrow-left {
+	transform: rotate(180deg);
+}
+
+.pagination {
+	display: flex;
+	flex-wrap: wrap;
+
+	a {
+        margin-left: 5px;
+        margin-right: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+        border-radius: 3px;
+        border: 1px solid $color--white;
+        width: 35px;
+        height: 35px;
+        color: $color--white;
+        text-decoration: none;
+        transition: none;
+
+       &:hover, &.active {
+           background-color: $color--white;
+           color: $color--grey-1;
+
+           svg {
+              fill : #000 !important;
+          }
+      };
+  }
+}

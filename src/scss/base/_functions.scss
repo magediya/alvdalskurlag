@@ -1,0 +1,32 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass functions.
+// -----------------------------------------------------------------------------
+
+/* Convert to rem's */
+@function rem($pixels) {
+  @return ($pixels / 16) * 1rem;
+}
+
+
+
+// calculateRem
+//–––––––––––––––––––––––––––––––––––––––––––––––––
+
+// Function for converting a px based font-size to rem.
+@function pxtorem($size) {
+  $remSize: $size / 16px;
+  //Default font size on html element is 100%, equivalent to 16px;
+  @return #{$remSize}rem;
+}
+
+// Mixin that will include the fall back px declaration as well as the calculated rem value.
+@mixin fontSize($size) {
+  font-size: $size;
+  font-size: pxtorem($size);
+}
+
+// aspect ratio
+@function ratio($width, $height) {
+  $result: $height / $width * 100%;
+  @return $result;
+}

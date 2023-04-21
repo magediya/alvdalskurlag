@@ -1,0 +1,102 @@
+.result-progress {
+    max-width: 700px;
+    margin: auto;
+
+    li {
+        list-style: none;
+        position: relative;
+        text-align: center;
+        flex: 2 1 auto;
+
+        @include respond-below(sm) {
+            width: 100%;
+            text-align: left !important;
+            padding-bottom: 35px;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 0;
+            right: 0;
+            border-top: 1px solid $color--grey-5;
+            z-index: -1;
+
+            @include respond-below(sm) {
+                border-top: 0;
+                border-left: 1px solid $color--grey-5;
+                left: 25px;
+                top: 0;
+                bottom: 0;
+            }
+        }
+
+        &:first-child {
+            text-align: left;
+
+            &:after {
+                left: 30px;
+
+                @include respond-below(sm) {
+                    left: 25px;
+                    top: 30px;
+                }
+            }
+        }
+
+        &:last-child {
+            text-align: right;
+
+            &:after {
+                right: 30px;
+
+                @include respond-below(sm) {
+                    right: 0;
+                    left: 25px;
+                    bottom: 45px;
+                }
+            }
+        }
+    }
+
+    .group {
+        display: inline-block;
+    }
+
+    &__count {
+        @include circle(50px);
+        background-color: $color--green-5;
+        color: $text-color;
+        font-size: pxtorem(30px);
+        line-height: pxtorem(50px);
+        display: block;
+        text-align: center;
+        font-weight: 700;
+        margin: auto;
+
+        @include respond-below(sm) {
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+
+    &__label {
+        display: block;
+        padding-top: 10px;
+        width: 100px;
+        font-size: pxtorem(12px);
+        line-height: pxtorem(18px);
+        text-align: center;
+        margin: auto;
+
+        @include respond-below(sm) {
+            display: inline-block;
+            vertical-align: middle;
+            width: calc(100% - 60px);
+            text-align: left;
+            padding-left: 14px;
+            padding-top: 0;
+        }
+    }
+}

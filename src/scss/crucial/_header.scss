@@ -1,0 +1,376 @@
+.site__header {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    padding: 15px 0;
+    z-index: 999;
+
+    &.is-stick {
+        position: fixed;
+        margin-top: -100px;
+        transform: translateY(100px);
+        transition: ease transform 0.5s;
+        background-color: $color--grey-1;
+    }
+
+    @include respond-above(md) {
+        padding: 30px 0;
+    }
+}
+
+.brand {
+    display: flex;
+    width: 90px;
+
+    &__black {
+        display: none;
+    }
+
+    .icon--logo {
+        height: 26px;
+    }
+
+    // @include respond-above(md) {
+    //     width: 120px;
+    // }
+}
+
+#icon--logo {
+    height: 26px;
+
+    .elem {
+        fill: white;
+    }
+}
+
+.white-theme {
+    #icon--logo {
+        .elem {
+            fill: black;
+        }
+    }
+}
+
+.black-theme {
+
+}
+
+.hamburger {
+    display: flex;
+    height: 30px;
+    width: 30px;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+
+    &:hover,
+    &:focus {
+        background-color: transparent;
+        outline: none;
+        cursor: pointer;
+    }
+
+    &__wrap {
+        display: block;
+    }
+
+    &__line {
+        display: block;
+        width: 30px;
+        margin: 5px auto;
+        height: 4px;
+        background-color: $bg-white;
+    }
+
+    &.close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        border-radius: 100%;
+        border: 2px solid $bg-white;
+
+        .hamburger__line {
+            position: absolute;
+            margin: 0;
+            height: 2px;
+            left: 5px;
+            width: 16px;
+            top: calc(50% - 1px);
+            transform: rotate(45deg);
+
+            &:last-child {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+
+}
+
+.navigation {
+    ul {
+        li {
+            list-style: none;
+            padding: 0 15px;
+            display: flex;
+
+            @include respond-below(sm) {
+                padding: 0 10px;
+            }
+
+            @include respond-below(xsm) {
+                padding: 0 6px;
+            }
+
+            a {
+                display: inline-flex;
+                flex-wrap: wrap;
+                align-items: center;
+                color: $text-color;
+                font-weight: 500;
+                font-size: pxtorem($font-size-base - 4);
+                text-decoration: none;
+                transition: ease color 0.3s;
+
+                &:hover,
+                &.active {
+                    color: $link-color;
+                }
+
+                &:before {
+                    font-size: pxtorem(18px);
+
+                    @include respond-below(xsm) {
+                        font-size: pxtorem(16px);
+                    }
+                }
+
+                span {
+                    padding-left: 10px;
+
+                    @include respond-below(md) {
+                        display: none;
+                    }
+                }
+
+                img {
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+}
+
+.flyoutmenu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    transform: translateX(100%);
+    transition: ease all $transition-duration;
+
+    &.is-open {
+        transform: translateX(0);
+
+        @include respond-below(sm) {
+            width: 100%;
+        }
+    }
+
+    &__menu-state {
+        background-color: $color--green-2;
+        width: 490px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        /*max-height: 100vh;*/
+        height: 100vh;
+        max-width: 100%;
+        @include respond-below(md) {
+            @include cssScrollbar(#292e1f, #1d1d1b, 10px);
+        }
+    }
+
+    li {
+        list-style: none;
+        padding: 5px 60px;
+        position: relative;
+
+        &.add-line {
+            border-top: 2px solid #2f322a;
+            margin-top: 40px;
+            padding-top: 40px;
+        }
+
+        a {
+            color: $text-color;
+            font-size: pxtorem($font-size-base + 4);
+            font-weight: 700;
+            text-decoration: none;
+            position: relative;
+
+
+            &:hover , &.active {
+                color: $color--green-7;
+                text-decoration: underline;
+            }
+        }
+
+        li {
+            padding-left: 0;
+
+            &:last-child {
+                margin-bottom: 30px;
+            }
+
+            a {
+                font-size: pxtorem($font-size-base);
+                font-weight: 400;
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    top: 5px;
+                    left: -30px;
+                    width: 13px;
+                    height: 13px;
+                    background-image: url(/assets/img/arrow-right.png);
+                    opacity: 0;
+                    transition: ease all 0.3s;
+                }
+
+                &:hover:before,
+                &.active:before {
+                    left: -22px;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &__menu {
+        &-top {
+            margin: 80px 0 40px;
+            /*padding: 0 60px;*/
+
+            @include respond-below(md) {
+                margin: 40px 0 40px;
+                padding: 0 30px;
+            }
+
+            @include respond-below(sm) {
+                padding: 0;
+            }
+
+            @include respond-above(md) {
+                @include cssScrollbar(#292e1f, #85ad48, 10px);
+            }
+            a{
+                display: inline-block;
+                &.trigger-caret{
+                    display: block;
+                    padding-right: 30px;
+                }
+            }
+            ul{
+                ul{
+                    display: none;
+                }
+            }
+            li {
+                &.has-sub{
+                    padding-right: 0;
+                }
+                &.is-open {
+                    > a{
+                        color: $color--green-7;
+                    }
+                }
+                &.a-open {
+                    ul {
+                        display: block;
+                    }
+                }
+            }
+
+            @at-root .menu__caret {
+                position: absolute;
+                top: 5 / 20 * 1em;
+                right: 10px;
+                display: block;
+                width: 36 / 20 * 1em;
+                height: 36 / 20 * 1em;
+                cursor: pointer;
+
+                &:not(.trigger-caret) {
+                    pointer-events: none;
+                }
+
+                &:after,
+                &:before {
+                    position: absolute;
+                    content: '';
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    display: block;
+                    margin: auto;
+                    width: 20 / 20 * 1em;
+                    height: 2px;
+                    background: $bg-white;
+                }
+
+                &:after {
+                    transform: rotate(-90deg);
+                    transition: all .2s ease;
+                    li.is-open &{
+                        transform: rotate(0);
+                    }
+                }
+            }
+
+            @at-root .text-grey {
+                .menu__caret {
+                    &:after, &:before {
+                        background: $color--grey-2;
+                    }
+                }
+            }
+
+        }
+        &-bottom {
+            border-top: 2px solid #2f322a;
+            padding: 40px 0px;
+
+            @include respond-below(md) {
+                padding: 40px 30px;
+            }
+
+            @include respond-below(sm) {
+                padding-left: 0;
+                padding-right: 0;
+            }
+            li{
+                a{
+                    font-size: pxtorem($font-size-base);
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+
+
+}
+
+.header-spacer {
+    height: 150px;
+
+    @include respond-below(sm) {
+        height: 120px;
+    }
+}

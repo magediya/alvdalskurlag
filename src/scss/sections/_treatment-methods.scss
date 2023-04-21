@@ -1,0 +1,136 @@
+// treatment-methods
+.treatment-methods {
+    background-color: $color--brown-4;
+
+    .semi-header {
+        margin-top: 20px;
+
+        @include respond-below(sm) {
+            padding-bottom: 30px;
+            padding-right: 50px;
+        }
+
+    }
+
+    .bottom-arrow {
+        @include respond-above(sm) {
+            width: 100%;
+            padding-top: 25px;
+            text-align: right;
+            padding-right: 100px;
+            padding-bottom: 5px;
+        }
+
+        @include respond-below(sm) {
+            position: absolute;
+            top: 10px;
+            right: 0;
+        }
+
+        img {
+            width: 20px;
+        }
+
+        .icon--bottom-arrow {
+            height: 55px;
+            width: 20px;
+        }
+    }
+
+    &__types-list {
+        .list-row {
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+        .r-left {
+            max-width: 64%;
+            a {
+                font-size: pxtorem($font-size-large);
+
+                @include respond-below(sm) {
+                    font-size: pxtorem($font-size-base - 2);
+                }
+            }
+        }
+
+        a {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: pxtorem($font-size-base - 2);
+
+            &:hover {
+                color: $link-color;
+                border-bottom-color: $link-color;
+            }
+        }
+    }
+
+    &__parallax {
+        @include respond-below(sm) {
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: -5px;
+            margin-right: -5px;
+
+            .photo {
+                width: 50%;
+                padding: 5px;
+            }
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        @include respond-above(sm) {
+
+            .photo-1 {
+                padding-left: 15%;
+            }
+
+            .photo-2 {
+                padding-left: 36%;
+                margin-top: -8%;
+                position: relative;
+                z-index: 99;
+            }
+
+            .photo-3 {
+                margin-top: -8%;
+                padding-left: 10%;
+            }
+
+            .photo-4 {
+                margin-top: -8%;
+            }
+        }
+    }
+
+    &__trends-photo {
+        position: relative;
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        .scnd-photo {
+            @include respond-above(sm) {
+                position: absolute;
+                right: 0;
+                bottom: 15%;
+            }
+        }
+    }
+}
+
+.quick-read {
+    max-width: 500px;
+}
+
+.fancybox-slide--html .fancybox-close-small {
+    color: $color--grey-2;
+    padding: 0;
+}

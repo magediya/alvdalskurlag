@@ -1,0 +1,39 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the semi-header component.
+// -----------------------------------------------------------------------------
+
+.semi-header {
+    font-size: pxtorem($font-size-large);
+    position: relative;
+    padding-left: 100px;
+    margin-bottom: 35px;
+    left: -100px;
+
+    @include respond-below(md) {
+        margin-bottom: 20px;
+        padding-left: 50px;
+        left: 0;
+    }
+
+    @include respond-below(sm) {
+        font-size: pxtorem($font-size-base - 1);
+    }
+
+    @include respond-below(xsm) {
+        font-size: pxtorem($font-size-base - 2);
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 13px;
+        margin-right: 10px;
+        width: 80px;
+        border-bottom: 2px solid $color--brown-2;
+
+        @include respond-below(md) {
+            width: 40px;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+/*
+	The Base folder is where all the global styling and utilities should go. Font definitions, SCSS variables & helper functions, and overall page layout (just the general arrangement of `<header>`, `<main>`, and `<footer>`) belong here.
+*/
+@import 'vars';
+@import 'mixins';
+@import 'functions';
+@import 'helpers';
+@import 'fonts';
+@import 'icon-fonts';
+@import 'icons';
+/*@import 'elements/reset';*/
+/*@import 'layout';*/
+
+/*
+	The Elements subfolder should never contain class or ID selectors. It should target elements directly: `p { margin: 1em 0; }`, etc. Anything that doesn't apply at such a global level does not belong here.
+*/
+@import 'elements/headings';
+@import 'elements/typograpgy';

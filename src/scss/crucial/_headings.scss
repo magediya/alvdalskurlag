@@ -1,0 +1,40 @@
+h1,
+.h1 {
+    font-size: pxtorem($h1-text);
+    line-height: pxtorem($h1-text + 10);
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+h2,
+.h2 {
+    font-size: pxtorem($h2-text);
+    line-height: pxtorem($h2-text + 12);
+    margin-bottom: 15px;
+}
+h3,
+.h3 {
+	font-size: pxtorem($h3-text);
+    line-height: pxtorem($h3-text + 15);
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+h4,
+.h4 {
+    font-size: pxtorem($h4-text);
+    line-height: pxtorem($h4-text + 15);
+
+}
+
+h5,
+.h5 {
+    font-size: pxtorem($h5-text);
+    line-height: pxtorem($h5-text + 8);
+}
+
+h6,
+.h6 {
+    font-size: pxtorem($h6-text);
+    line-height: pxtorem($h6-text + 8);
+}

@@ -1,0 +1,96 @@
+.gallery-grid{
+    .card-image{
+        &.ratio2-3{
+            padding-top: calc(150% + 20px);
+        }
+    }
+    .point{
+        margin-right: 0;
+    }
+    .popup-point{
+        position: absolute;
+        margin-right: 0;
+        /*top: 50%;
+        left: 50%;*/
+        /*top: 10%;
+        right: 10%;*/
+        padding: 3px;
+        border: 1px solid $color--green-5;
+        border-radius: 100%;
+        &-top{
+            &-left{
+                top: 10%;
+                left: 10%;
+            }
+            &-center{
+                top: 10%;
+                right: calc(50% - 16px);
+            }
+            &-right{
+                top: 10%;
+                right: 10%;
+            }
+        }
+        &-center{
+            &-left{
+                top: calc(50% - 16px);
+                left: 10%;
+            }
+            &-center{
+                top: calc(50% - 16px);
+                right: calc(50% - 16px);
+            }
+            &-right{
+                top: calc(50% - 16px);
+                right: 10%;
+            }
+        }
+        &-bottom{
+            &-left{
+                bottom: 10%;
+                left: 10%;
+            }
+            &-center{
+                bottom: 10%;
+                right: calc(50% - 16px);
+            }
+            &-right{
+                bottom: 10%;
+                right: 10%;
+            }
+        }
+    }
+}
+.gallery-brief{
+    max-width: 500px;
+    .btn-link{
+       border-bottom: 0;
+        span{
+           border-bottom: 1px solid $color--grey-1;
+        }
+        i{
+            margin-right: 0;
+            margin-left: 10px;
+            margin-top: 2px;
+        }
+    }
+    .btn {
+        margin-top: 35px;
+        color: $color--grey-1;
+        i{
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+            margin-top: 2px;
+        }
+        &:hover {
+            color: $text-color;
+            i{
+                color: $text-color;
+            }
+        }
+    }
+    .desc{
+        align-content: space-between;
+    }
+}

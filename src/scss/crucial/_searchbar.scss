@@ -1,0 +1,80 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the SEARCHBAR component.
+// -----------------------------------------------------------------------------
+.searchbar {
+    border-bottom: 2px solid $bg-white;
+    margin-bottom: 20px;
+
+    input[type=submit] {
+        @include square(50px);
+        background-color: transparent;
+        background-image: url(/assets/img/search-solid_neg.svg);
+        border: 0;
+        background-size: 30px;
+        padding: 0;
+        cursor: pointer;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        @include respond-below(sm) {
+            background-size: 20px;
+            @include square(40px);
+        }
+    }
+
+    input[type=text] {
+        flex: auto;
+        font-size: pxtorem(25px);
+        // font-weight: 300;
+        font-weight: 400;
+        color: $text-color;
+        background-color: transparent;
+        border: 0;
+        padding: 6px 20px;
+
+        @include respond-below(sm) {
+            padding: 5px 10px;
+            font-size: pxtorem(18px);
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &::placeholder {
+            color: $text-color;
+        }
+
+    }
+
+    &.xl {
+        @media (max-width: 1200px) {
+            &[class*=cell-] {
+                width: 100%;
+            }
+        }
+
+        @include respond-above(md) {
+            input[type=text] {
+                height: 66px;
+                padding-bottom: 10px;
+                padding-top: 10px;
+                font-size: pxtorem(45px);
+                font-weight: 700;
+                text-align: center;
+            }
+
+            input[type=submit] {
+                @include square(66px);
+                background-size: 55px;
+            }
+        }
+
+        input[type=text] {
+            &::placeholder {
+                color: $color--grey-7;
+            }
+        }
+
+    }
+}

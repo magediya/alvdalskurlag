@@ -1,0 +1,124 @@
+.size-90 {
+    font-size: pxtorem(90px);
+}
+
+.experience {
+    .image-group {
+        .card-image:first-child {
+            margin-bottom: -25%;
+            margin-left: 15%;
+        }
+    }
+
+    .comment-box {
+        position: relative;
+        width: 290px;
+        margin-left: auto;
+        margin-right: auto;
+
+        span {
+            position: absolute;
+            top: 43px;
+            left: 54px;
+            width: 40%;
+            color: $color--grey-1;
+            font-weight: 700;
+        }
+    }
+
+    .tips-list {
+        padding-top: 30px;
+
+        &.two-col {
+            @include respond-above(sm) {
+                display: flex;
+            }
+
+
+            > li {
+                padding-left: 0;
+                padding-bottom: 0;
+
+                &:before {
+                    display: none;
+                }
+
+                @include respond-above(sm) {
+                    width: 50%;
+
+                    &:first-child {
+                        padding-right: 15px;
+                    }
+
+                    &:last-child {
+                        padding-left: 15px;
+                    }
+                }
+            }
+        }
+
+        li {
+            width: 100%;
+            position: relative;
+            padding-left: 45px;
+            list-style: none;
+            padding-bottom: 25px;
+
+            &:before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                font-size: pxtorem(30px);
+                color: $color--green-5;
+            }
+        }
+    }
+
+    &__sidebar {
+        position: relative;
+
+        @include respond-above(sm) {
+            &:before {
+                content: '';
+                position: absolute;
+                width: 2px;
+                height: 100%;
+                top: 0;
+                left: -20px;
+                background-color: $color--brown-2;
+            }
+        }
+    }
+
+    &__categoty {
+        li {
+            list-style: none;
+            padding-bottom: 15px;
+        }
+
+        .h2 {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0;
+            text-transform: uppercase;
+
+            &:after {
+                content: "";
+                width: 100%;
+                height: 2px;
+                background-color: $color--brown-2;
+                margin-left: 9px;
+            }
+        }
+
+        p {
+            font-style: italic;
+            margin-bottom: 0;
+            padding-left: 15px;
+
+            strong {
+                margin-left: -15px;
+            }
+        }
+    }
+}

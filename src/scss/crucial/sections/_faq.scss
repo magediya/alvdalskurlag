@@ -1,0 +1,82 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass FAQ.
+// -----------------------------------------------------------------------------
+
+.faqs, .tabbing {
+    &__category-nav,
+    &__nav {
+        li {
+            list-style: none;
+            text-align: center;
+            margin-left: 3px;
+            margin-right: 3px;
+            margin-bottom: 8px;
+            
+            @include respond-below(sm) {
+                .faqs & {
+                    width: 50%;
+                }
+            }
+        }
+
+        a {
+            color: $text-color;
+            text-decoration: none;
+            display: block;
+            padding: 4px 14px;
+
+            @include respond-above(md) {
+                padding: 4px 23px;
+            }
+
+            border: 1px solid transparent;
+
+            &:hover,
+            &.active {
+                border-color: $text-color;
+            }
+        }
+    }
+}
+
+.accordion {
+    $thisCard: &;
+
+    &_card {
+        padding: 10px 10px 0 10px;
+        border-top: 2px solid $color--brown-2;
+    }
+
+    &__card-header {
+        position: relative;
+        padding-bottom: 10px;
+        padding-right: 30px;
+        cursor: pointer;
+
+        h4,
+        .h4 {
+            font-weight: 400;
+        }
+
+        #{$thisCard}__arrow-down {
+            position: absolute;
+            content: "";
+            top: 0;
+            right: 0;
+            width: 14px;
+            height: 14px;
+            display: block;
+            transform: rotate(45deg);
+            transform-origin: center;
+            border-right: 2px solid $text-color;
+            border-bottom: 2px solid $text-color;
+        }
+
+        &.is-show {
+            #{$thisCard}__arrow-down {
+                transform: rotate(-135deg);
+            }
+        }
+    }
+
+}

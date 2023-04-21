@@ -1,0 +1,116 @@
+.beforeafter {
+    &-container {
+        box-sizing: content-box;
+        z-index: 0;
+        overflow: hidden;
+        position: relative;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+
+        img {
+            max-width: 100%;
+            position: absolute;
+            top: 0;
+            display: block;
+        }
+    }
+
+    &-before {
+        z-index: 20;
+    }
+
+    &-after {
+        z-index: 10;
+    }
+
+    &-handle {
+        height: 38px;
+        width: 38px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -22px;
+        margin-top: -22px;
+        border: 3px solid $bg-white;
+        border-radius: 100%;
+        box-shadow: 0px 0px 12px rgba(51, 51, 51, 0.5);
+        z-index: 40;
+        cursor: pointer;
+        background-color: $color--green-1;
+
+        &:before,
+        &:after {
+            content: " ";
+            display: block;
+            background: $bg-white;
+            position: absolute;
+            z-index: 30;
+            width: 6px;
+            margin-left: -3px;
+            box-shadow: 0px 0px 12px rgba(51, 51, 51, 0.5);
+            left: 50%;
+            height: 9999px;
+        }
+
+        &:before {
+            bottom: 50%;
+            margin-bottom: 22px;
+            box-shadow: 0 3px 0 white, 0px 0px 12px rgba(51, 51, 51, 0.5);
+        }
+
+        &:after {
+            top: 50%;
+            margin-top: 22px;
+            box-shadow: 0 -3px 0 white, 0px 0px 12px rgba(51, 51, 51, 0.5);
+        }
+    }
+
+    &-left-arrow,
+    &-right-arrow {
+        width: 0;
+        height: 0;
+        border: 6px inset transparent;
+        position: absolute;
+    }
+
+    &-left-arrow {
+        border-right: 6px solid white;
+        left: 50%;
+        top: 50%;
+        margin-left: -17px;
+        margin-top: -6px;
+    }
+
+    &-right-arrow {
+        border-left: 6px solid white;
+        right: 50%;
+        top: 50%;
+        margin-right: -17px;
+        margin-top: -6px;
+    }
+    &-overlay{
+        display: none;
+    }
+
+    &-before-name, &-after-name {
+        position: absolute;
+        top: 48%;
+        z-index: 99;
+    }
+
+    &-color-name {
+        position: absolute;
+        top: 15px;
+        left: 20px;
+        z-index: 99;
+    }
+
+    &-before-name{
+        left: 20px;
+    }
+
+    &-after-name {
+        right: 20px;
+    }
+}

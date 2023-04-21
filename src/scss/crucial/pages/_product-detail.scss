@@ -1,0 +1,223 @@
+.product-detail {
+    .semititle {
+        font-size: pxtorem($font-size-base - 2);
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+
+    p {
+        font-size: pxtorem($font-size-base - 2);
+    }
+
+    .description {
+
+        h3 {
+            line-height: 2.25rem;
+        }
+    }
+
+    .colors-group {
+
+        h5,
+        .h5 {
+            font-size: pxtorem($font-size-base);
+            text-transform: uppercase;
+            color: $color--grey-6;
+        }
+
+        .semititle {
+            color: $color--grey-7;
+        }
+    }
+
+    .form-action {
+        @at-root .favourites {
+            @include square(50px);
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+
+            &:before {
+                font-size: pxtorem(22px) !important;
+                margin: 0 !important;
+            }
+        }
+
+        .addtocart {
+            /*margin-left: 15px;*/
+            background-image: url(#{$icons}arrow-right-white.png);
+            background-size: 20px;
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            text-align: left;
+
+            &:hover {
+                background-image: url(#{$icons}arrow-right-black.png);
+            }
+        }
+    }
+}
+
+.product-slider {
+    position: relative;
+
+    $this: &;
+
+    &__large {
+        &:not(.slick-slider) {
+            opacity: 0;
+        }
+
+        .slick {
+            &-arrow {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 99;
+                width: 35px;
+                height: 30px;
+                // background-image: url(#{$icons}arrow-right-white.png);
+                background-image: url(#{$icons}arrow-right-white_drop-shadow.png);
+                background-size: 35px;
+                background-color: transparent;
+                background-repeat: no-repeat;
+                border-width: 0;
+                font-size: 0;
+                outline: none;
+                padding: 0;
+                &:hover
+                {
+                    cursor: pointer;
+                }
+            }
+
+            &-next {
+                right: 35px;
+            }
+
+            &-prev {
+                left: 135px;
+                transform: translateY(-50%) rotate(180deg);
+                transform-origin: center;
+
+                @include respond-below(sm) {
+                    left: 90px;
+                }
+            }
+
+            &-slide {
+                max-height: 800px;
+                .adaptive-img {
+                    img {
+                        &[data-object-fit=contain] {
+                            max-height: 800px;
+                        }
+                    }
+                }
+                @include respond-below(sm) {
+                    max-height: 400px;
+                }
+            }
+        }
+    }
+
+    &__outer {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50px;
+
+        @include respond-below(sm) {
+            left: 20px;
+        }
+
+        #{$this}__thumbnails {
+            width: 47px;
+
+            .item {
+                @include square(47px);
+                border: 1px solid $bg-white;
+                margin-top: 4px;
+                margin-bottom: 4px;
+            }
+        }
+    }
+
+}
+
+.product-tabbing {
+    &__switch {
+        .btn {
+            display: block;
+            text-align: left;
+        }
+    }
+
+    &__block {
+
+        display: none;
+
+        &:first-child {
+            display: block;
+        }
+
+        h6,
+        .h6 {
+            text-transform: uppercase;
+        }
+
+        ul {
+            padding-left: 23px;
+        }
+
+        li,
+        p,
+        span,
+        a {
+            font-size: pxtorem($font-size-base - 2);
+
+        }
+
+        a:hover {
+            color: $link-color;
+        }
+
+        .characteristics {
+            padding-left: 0;
+            padding-right: 20px;
+
+            li {
+                list-style: none;
+                border-bottom: 1px solid $color--brown-2;
+                padding: 5px 10px;
+                min-height: 36px;
+                display: flex;
+                flex-wrap: wrap;
+
+                span {
+                    width: 75%;
+                }
+
+                span+span {
+                    width: 25%;
+                }
+            }
+        }
+
+        h5,
+        .h5 {
+            text-transform: uppercase;
+        }
+
+        .links {
+            padding-left: 0;
+
+            li {
+                list-style: none;
+            }
+        }
+    }
+
+}

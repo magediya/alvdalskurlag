@@ -1,0 +1,144 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the infopoint component.
+// -----------------------------------------------------------------------------
+
+.infopoint {
+    width: 330px;
+    max-width: 100%;
+    margin: auto;
+    margin-top: -50px;
+    position: relative;
+    z-index: 99;
+
+    @include respond-below(md) {
+        width: 250px;
+    }
+
+    @include respond-below(sm) {
+        width: 90%;
+
+        img {
+            max-width: 230px;
+            margin: auto;
+            display: block;
+        }
+    }
+
+    .point {
+        position: absolute;
+        top: 10%;
+        right: 25%;
+
+        @include respond-below(sm) {
+            width: 100%;
+            height: auto;
+            position: relative;
+            top: 0;
+            right: 0;
+
+            &:after,
+            &:before {
+                display: none;
+            }
+
+            $root: &;
+
+            &__tooltip {
+                position: initial;
+                opacity: 1;
+                pointer-events: auto;
+                width: 100%;
+            }
+        }
+    }
+
+}
+
+.point {
+    display: inline-block;
+    vertical-align: middle;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    background-color: $color--green-5;
+    position: relative;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: ease background-color $transition-duration;
+
+    &:hover {
+        background-color: $color--green-7;
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        left: 5px;
+        right: 5px;
+        border-bottom: 2px solid $bg-white;
+        top: calc(50% - 1px);
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 5px;
+        bottom: 5px;
+        border-left: 2px solid $bg-white;
+        left: calc(50% - 1px);
+    }
+
+    $root: &;
+
+    &__tooltip {
+        position: absolute;
+        bottom: calc(100% + 20px);
+        left: -60px;
+        background-color: $color--green-5;
+        width: 335px;
+        padding: 15px;
+        border-radius: 5px;
+        font-size: pxtorem($font-size-base);
+        opacity: 0;
+        pointer-events: none;
+        transition: ease all 0.3s;
+
+
+        &:hover {
+            text-shadow: 1px 1px $color--grey-2;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 8px 8px 0 8px;
+            border-color: $color--green-5 transparent transparent transparent;
+            left: 64px;
+            bottom: -8px;
+        }
+
+        @include respond-below(sm) {
+            &.infobox:after {
+                left: auto;
+                right: 64px;
+            }
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            width: 50px;
+            left: 48px;
+            bottom: -20px;
+            height: 21px;
+        }
+
+        #{$root}:hover & {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    }
+}

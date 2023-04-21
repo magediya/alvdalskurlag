@@ -1,0 +1,92 @@
+@font-face {
+  font-family: "alvdal";
+  src:url("#{$font-directory}icon-font/alvdal.eot");
+  src:url("#{$font-directory}icon-font/alvdal.eot?#iefix") format("embedded-opentype"),
+  url("#{$font-directory}icon-font/alvdal.woff") format("woff"),
+  url("#{$font-directory}icon-font/alvdal.ttf") format("truetype"),
+  url("#{$font-directory}icon-font/alvdal.svg#alvdal") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "alvdal" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before,
+.breadcrumb li:after ,
+.card-list li:before,
+.tips-list li:before{
+  font-family: "alvdal" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-angle-right-solid:before,
+.breadcrumb li:after ,
+.card-list li:before{
+  content: "\61";
+}
+.icon-book-reader-solid:before {
+  content: "\62";
+}
+.icon-bottom-arrow:before {
+  content: "\63";
+}
+.icon-check-circle-regular:before {
+  content: "\6d";
+}
+.icon-facebook-f-brands:before {
+  content: "\64";
+}
+.icon-heart-regular:before {
+  content: "\65";
+}
+.icon-map-marker-alt-solid:before {
+  content: "\66";
+}
+.icon-instagram-brands:before {
+  content: "\67";
+}
+.icon-pinterest-p-brands:before {
+  content: "\68";
+}
+.icon-search-solid:before {
+  content: "\69";
+}
+.icon-checklist-regular:before {
+  content: "\6c";
+}
+.icon-cross-circle-regular:before {
+  content: "\6a";
+}
+.icon-plus-circle-regular:before {
+  content: "\6b";
+}
+.icon-comments-solid-green:before ,
+.tips-list li:before {
+  content: "\6e";
+}
+.icon-plus:before {
+  content: "\6f";
+}
+.icon-arrow-right:before {
+  content: "\70";
+}

@@ -1,0 +1,340 @@
+html.webp .colors-list__circle {
+    background-image: url('/assets/img/colors.webp');
+}
+
+html.no-webp .colors-list__circle {
+    background-image: url('/assets/img/colors.jpg');  
+}
+
+.colors-list__circle {
+    &--klar {
+        background-position: 0 0;
+    }
+
+    &--fjellgra {
+        background-position: 375px 0;
+    }
+
+    &--oker {
+        background-position: 300px 0;
+    }
+
+    &--rod {
+        background-position: 225px 0;
+    }
+
+    &--brun {
+        background-position: 150px 0;
+    }
+
+    &--sort,
+    &--svart {
+        background-position: 75px 0;        
+    }
+}
+
+html.webp .circle-w-46 .colors-list__circle {
+    background-image: url('/assets/img/colors-46.webp');
+}
+
+html.no-webp .circle-w-46 .colors-list__circle {
+    background-image: url('/assets/img/colors-46.jpg');
+}
+
+.circle-w-46 .colors-list__circle {
+    &--klar {
+        background-position: 0 0;
+    }
+
+    &--fjellgra {
+        background-position: 230px 0;
+    }
+
+    &--oker {
+        background-position: 184px 0;
+    }
+
+    &--rod {
+        background-position: 138px 0;
+    }
+
+    &--brun {
+        background-position: 92px 0;
+    }
+
+    &--sort,
+    &--svart {
+        background-position: 46px 0;        
+    }
+}
+
+html.webp .circle-w-40 .colors-list__circle {
+    background-image: url('/assets/img/colors-40.webp');
+}
+
+html.no-webp .circle-w-40 .colors-list__circle {
+    background-image: url('/assets/img/colors-40.jpg');
+}
+
+.circle-w-40 .colors-list__circle {
+    &--klar {
+        background-position: 0 0;
+    }
+
+    &--fjellgra {
+        background-position: 200px 0;
+    }
+
+    &--oker {
+        background-position: 160px 0;
+    }
+
+    &--rod {
+        background-position: 120px 0;
+    }
+
+    &--brun {
+        background-position: 80px 0;
+    }
+
+    &--sort,
+    &--svart {
+        background-position: 40px 0;        
+    }
+}
+
+.colors-list {
+    $this: &;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+
+    li {
+        list-style: none;
+        border-radius: 100%;
+        transition: ease all $transition-duration;
+        position: relative;
+    }
+
+    input[type=radio] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        z-index: 9;
+    }
+
+    .input-label {
+        text-indent: -9999px;
+        display: inline-block;
+    }    
+
+    &__circle {
+        position: relative;
+
+        .input-circle {
+            position: absolute;
+            transition: ease all $transition-duration;
+            border-style: solid;
+            border-color: transparent;
+        }
+
+        input[type=radio]:checked {
+            +.input-circle {
+                border-color: #343231;
+            }
+        }
+
+        &.active:after {
+            position: absolute;
+            content: '';
+            top: -5px;
+            right: -5px;
+            background: url(#{$icons}check-circle-regular_neg.svg) no-repeat center $color--grey-1;
+            @include circle(22px);
+        }
+    }
+
+    &.circle-w {
+        &-75 {
+            justify-content: center;
+
+            #{$this}__circle {
+                @include radioCircle(75px, 6px);
+
+                .input-circle {
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    border-width: 2px;
+                    border-color: #343231;
+                }
+            }
+
+            li:hover {
+                #{$this}__circle {
+                    .input-circle {
+                        border-width: 6px;
+                        top: -6px;
+                        right: -6px;
+                        bottom: -6px;
+                        left: -6px;
+                    }
+                }
+            }
+
+            li {
+                padding-bottom: 25px;
+
+                @include respond-below(sm) {
+                    width: 33.33%;
+                    label {
+                        margin: 0 auto !important;
+                    }
+                    /*display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;*/
+                }
+            }
+        }
+
+        &-46 {
+            #{$this}__circle {
+                @include radioCircle(46px, 5px);
+                .input-circle {
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    border-width: 2px;
+                    border-color: #343231;
+                }
+
+                @include respond-below(md) {
+                    @include radioCircle(36px, 4px);
+
+                    .input-circle {
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        border-width: 1px;
+                        border-color: #343231;
+                    }
+                }
+            }
+
+            li:hover {
+                #{$this}__circle {
+                    .input-circle {
+                        border-width: 5px;
+                        top: -5px;
+                        right: -5px;
+                        bottom: -5px;
+                        left: -5px;
+                    }
+                }
+            }
+            @include respond-below(md) {
+                li:hover {
+                    #{$this}__circle {
+                        .input-circle {
+                            border-width: 4px;
+                            top: -4px;
+                            right: -4px;
+                            bottom: -4px;
+                            left: -4px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-40 {
+            #{$this}__circle {
+                @include radioCircle(40px, 4px);
+                .input-circle {
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    border-width: 1px;
+                    border-color: #343231;
+                }
+            }
+
+            li:hover {
+                #{$this}__circle {
+                    .input-circle {
+                        border-width: 4px;
+                        top: -4px;
+                        right: -4px;
+                        bottom: -4px;
+                        left: -4px;
+                    }
+                }
+            }
+        }
+
+        &-30 {
+            #{$this}__circle {
+                @include radioCircle(30px, 3px);
+                .input-circle {
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    border-width: 1px;
+                    border-color: #343231;
+                }
+            }
+
+            li:hover {
+                #{$this}__circle {
+                    .input-circle {
+                        border-width: 3px;
+                        top: -3px;
+                        right: -3px;
+                        bottom: -3px;
+                        left: -3px;
+                    }
+                }
+            }
+        }
+
+        &-24 {
+            #{$this}__circle {
+                @include radioCircle(24px, 2px);
+                .input-circle {
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    border-width: 1px;
+                    border-color: #343231;
+                }
+            }
+
+            li:hover {
+                #{$this}__circle {
+                    .input-circle {
+                        border-width: 2px;
+                        top: -2px;
+                        right: -2px;
+                        bottom: -2px;
+                        left: -2px;
+                    }
+                }
+            }
+        }
+    }
+
+    li:hover {
+        #{$this}__circle .input-circle {
+            border-color: #343231;
+        }
+    }
+}

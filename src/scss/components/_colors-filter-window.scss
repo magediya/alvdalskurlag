@@ -1,0 +1,125 @@
+.colors-filter-window {
+    background-color: $bg-white;
+    position: absolute;
+    right: 0;
+    width: 300px;
+    padding: 15px 10px;
+    top: 20%;
+    z-index: 99;
+
+    .reset {
+        color: $text-color;
+        font-size: pxtorem($font-size-base - 2);
+        left: 0;
+        top: -30px;
+        position: absolute;
+    }
+
+    &_top {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .icon-cross-circle-regular {
+        font-size: pxtorem($font-size-large + 2);
+        cursor: pointer;
+    }
+
+    .colors-list {
+        .color-name {
+            font-size: pxtorem($font-size-large / 2);
+            color: $color--grey-2;
+        }
+
+        li {
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
+        li:hover {
+
+            .input-circle {
+                border-color: $color--grey-5 !important;
+            }
+        }
+
+        input[type=radio]:checked+.input-circle {
+            border-color: $color--grey-5 !important;
+        }
+
+    }
+
+    @at-root .checkboxes-dd {
+        max-height: 250px;
+        @include cssScrollbar(#292e1f, $color--orange-2, 5px);
+
+        li {
+            list-style: none;
+        }
+
+        >li {
+            border-top: 1px solid $color--grey-5;
+            padding: 3px 0;
+        }
+
+        &__heading {
+            font-weight: 500;
+            font-size: pxtorem($font-size-base - 2);
+            display: block;
+            position: relative;
+            margin-left: 8px;
+            margin-right: 8px;
+            cursor: pointer;
+
+            &:before {
+                position: absolute;
+                right: 0;
+                top: 5px;
+            }
+
+            &.is-open:before {
+                transform: rotate(45deg);
+            }
+        }
+
+        .checkboxes {
+            display: none;
+
+            li {
+                padding: 5px 10px;
+                background-color: rgba($color--grey-5, 0.10);
+            }
+
+            &__squarebox {
+                border-color: $color--grey-2;
+                @include square(12px);
+
+                &:after {
+                    right: 2px;
+                    top: 1px !important;
+                }
+            }
+
+            &__label {
+                color: $color--grey-2;
+                font-size: pxtorem($font-size-base - 2);
+            }
+        }
+    }
+
+    .filter-action {
+        padding-left: 5px;
+        padding-right: 5px;
+
+        .btn {
+            width: 46%;
+            font-size: pxtorem($font-size-base - 1);
+            padding: 7px 10px;
+        }
+    }
+
+}

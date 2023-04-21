@@ -1,0 +1,134 @@
+// our-departments
+.our-departments {
+    /*background-color: $color--grey-1;*/
+
+    h5,
+    .h5 {
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: pxtorem($font-size-base);
+    }
+}
+
+.welcome-about {
+    @include respond-below(sm) {
+        background-color: $color--brown-3;
+    }
+
+    .infopoint {
+        margin-bottom: -100px;
+
+        @include respond-below(sm) {
+            &.top {
+                margin-bottom: 0;
+                margin-top: 0;
+                padding-top: 20px;
+            }
+
+            &.bottom {
+                margin-bottom: -50px;
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+.fuild-wrap {
+    &-50 {
+        max-width: calc((#{$content-width} / 2) - 10px);
+    }
+
+    &-33 {
+        max-width: calc((#{$content-width} / 3) - 10px);
+    }
+
+    @include respond-below(md) {
+        max-width: 100%;
+    }
+}
+
+.bottom-arrow {
+    width: 100%;
+    img , svg{
+        max-width: 20px;
+        max-height: 55px;
+    }
+    svg {
+        display: block;
+        margin-left: auto;
+    }
+    &.text-center {
+        svg {
+            margin: 0 auto;
+
+        }
+    }
+}
+
+.cookies {
+    border: 1px solid $bg-white;
+    width: 100%;
+    max-width: 514px;
+    text-align: right;
+    padding: 25px;
+    position: relative;
+
+    p {
+        margin-bottom: 5px;
+    }
+
+    &.white-bg {
+
+        p,
+        a {
+            color: $color--grey-2;
+        }
+
+        .close {
+
+            &:after,
+            &:before {
+                border-color: $color--grey-2;
+            }
+        }
+    }
+
+    a:hover {
+        color: $link-color !important;
+    }
+
+    .close {
+        display: block;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        cursor: pointer;
+        transform: rotate(45deg);
+
+        &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            border-bottom: 2px solid $bg-white;
+            top: calc(50% - 1px);
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            border-left: 2px solid $bg-white;
+            left: calc(50% - 1px);
+        }
+    }
+}
+.w-100{
+    width: 100% !important;
+}

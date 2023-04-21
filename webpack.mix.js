@@ -1,0 +1,165 @@
+let mix = require('laravel-mix');
+require('laravel-mix-svg-sprite');
+
+/*
+ |--------------------------------------------------------------------------
+ | Mix Asset Management
+ |--------------------------------------------------------------------------
+ |
+ | Mix provides a clean, fluent API for defining some Webpack build steps
+ | for your Laravel application. By default, we are compiling the Sass
+ | file for your application, as well as bundling up your JS files.
+ |
+ */
+
+mix.webpackConfig({
+	module: {
+		rules: [{
+			test: require.resolve('jquery'),
+			use: [{
+				loader: 'expose-loader',
+				options: '$'
+			}]
+		}]
+	}
+});
+
+mix.options({
+	postCss: [
+		require('autoprefixer')({
+			cascade: false,
+			// grid: true
+		})
+	]
+});
+
+mix.autoload({
+	jquery: ['$', 'window.$', 'window.jQuery']
+});
+
+mix.setPublicPath('web/assets');
+mix.setResourceRoot('../');
+
+// Compile JS
+// mix.js('src/js/crucial.js', 'js/');
+// mix.js('src/js/main.js', 'js/');
+// mix.js('src/js/main.js', 'js/').extract();
+
+// Main - Home page
+mix.js([
+	'src/js/main-home.js',
+    'src/js/modules/hamburger-menu.js',
+    'src/js/modules/floating-window.js',
+	'src/js/modules/plukkliste.js'
+], 'js/main-home.js');
+
+// Main - Product pages
+mix.js([
+	'src/js/main-products.js',
+    'src/js/modules/hamburger-menu.js',
+	'src/js/modules/product-search.js',
+	'src/js/modules/product-detail.js',
+	'src/js/modules/plukkliste.js',
+	'src/js/modules/tabbing.js'
+], 'js/main-products.js');
+
+// Main - All other pages
+mix.js([
+	'src/js/main.js',
+	'src/js/vendor/jquery.event.move.min.js',
+	'src/js/vendor/jquery.twentytwenty.min.js',
+	'src/js/vendor/isotope.pkgd.min.js',
+    'src/js/modules/hamburger-menu.js',
+    'src/js/modules/accordion.js',
+    'src/js/modules/before-and-after.js',
+    'src/js/modules/file-handling.js',
+    'src/js/modules/tabbing.js',
+    'src/js/modules/gallery.js',
+	'src/js/modules/plukkliste.js'
+], 'js/main.js');
+
+mix.js([
+	'src/js/main-press.js',
+    'src/js/modules/hamburger-menu.js',
+	'src/js/modules/press-search.js',
+], 'js/main-press.js');
+
+// Compile SASS
+mix
+	.sass('src/scss/crucial.scss', 'css/')
+	.sass('src/scss/main.scss', 'css/')
+	.sass('src/scss/cp.scss', 'css/')
+;
+
+// Copy fonts
+// mix.copy('web/assets/css/crucial.css', 'templates/crucial/crucial.css');
+mix.copy('src/fonts', 'web/assets/fonts/');
+
+// Combine icons
+mix.svgSprite('src/icons/**/*.svg', 'web/assets/svg/icons.svg');
+
+// Add cache-busting versioning to the built files via a /[publicPath]/mix-manifest.json
+mix.version();
+
+// Alternate: This adds the font files to the mix-manifest.json, from where they can be injected with cache-busting into the HTML, but the cache-busting string still doesn't match up with what's in the CSS.
+// mix.version(['web/assets/fonts/**']);
+
+// Generate source maps
+mix.webpackConfig({
+	devtool: 'source-map'
+});
+
+mix.sourceMaps();
+
+mix.browserSync({
+	proxy: process.env.DEFAULT_SITE_URL,
+	// if 'files' isn't specified, it will auto-reload when the processed files (CSS & JS) are changed. It won't detect the templates folder however. Specifying this option manually means you need to include ALL the paths you want to watch for changes, not just the ADDITIONAL paths.
+	files: [
+		'templates/**/*',
+		'web/assets/css/**/*.css',
+		'web/assets/js/**/*.js'
+	],
+	browser: "chrome"
+});
+
+// Shows one 'Build Success' message and goes silent unless there's an error.
+mix.disableSuccessNotifications();
+
+
+// Full API
+// mix.js(src, output);
+// mix.react(src, output); <-- Identical to mix.js(), but registers React Babel compilation.
+// mix.preact(src, output); <-- Identical to mix.js(), but registers Preact compilation.
+// mix.coffee(src, output); <-- Identical to mix.js(), but registers CoffeeScript compilation.
+// mix.ts(src, output); <-- TypeScript support. Requires tsconfig.json to exist in the same folder as webpack.mix.js
+// mix.extract(vendorLibs);
+// mix.sass(src, output);
+// mix.less(src, output);
+// mix.stylus(src, output);
+// mix.postCss(src, output, [require('postcss-some-plugin')()]);
+// mix.browserSync('my-site.test');
+// mix.combine(files, destination);
+// mix.babel(files, destination); <-- Identical to mix.combine(), but also includes Babel compilation.
+// mix.copy(from, to);
+// mix.copyDirectory(fromDir, toDir);
+// mix.minify(file);
+// mix.sourceMaps(); // Enable sourcemaps
+// mix.version(); // Enable versioning.
+// mix.disableNotifications();
+// mix.setPublicPath('path/to/public');
+// mix.setResourceRoot('prefix/for/resource/locators');
+// mix.autoload({}); <-- Will be passed to Webpack's ProvidePlugin.
+// mix.webpackConfig({}); <-- Override webpack.config.js, without editing the file directly.
+// mix.babelConfig({}); <-- Merge extra Babel configuration (plugins, etc.) with Mix's default.
+// mix.then(function () {}) <-- Will be triggered each time Webpack finishes building.
+// mix.override(function (webpackConfig) {}) <-- Will be triggered once the webpack config object has been fully generated by Mix.
+// mix.dump(); <-- Dump the generated webpack config object to the console.
+// mix.extend(name, handler) <-- Extend Mix's API with your own components.
+// mix.options({
+//   extractVueStyles: false, // Extract .vue component styling to file, rather than inline.
+//   globalVueStyles: file, // Variables file to be imported in every component.
+//   processCssUrls: true, // Process/optimize relative stylesheet url()'s. Set to false, if you don't want them touched.
+//   purifyCss: false, // Remove unused CSS selectors.
+//   terser: {}, // Terser-specific options. https://github.com/webpack-contrib/terser-webpack-plugin#options
+//   postCss: [] // Post-CSS options: https://github.com/postcss/postcss/blob/master/docs/plugins.md
+// });

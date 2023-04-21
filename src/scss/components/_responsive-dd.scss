@@ -1,0 +1,35 @@
+.responsive-dd{
+    @include respond-above(md) {
+        display: flex !important; 
+    }
+    @include respond-below(md) {
+        background-color: $color--grey-1;
+        position: absolute;
+        display: none;
+        width: 100%;
+        border: 1px solid $bg-white;
+        border-top: 0;
+        li{
+            margin-left: 0;
+            margin-right: 0;
+            width: 100% !important;
+        }
+        .active{
+            background-color: $bg-white;
+            color:$color--grey-1 ;
+        }
+    }
+    @at-root  .responsive-select{
+        display: none;
+        margin-bottom: 0;
+        margin-right: 25px;
+        @include respond-below(md) {
+            display: block;
+        }
+    }
+   @at-root .responsive-dd-wrap{
+        width: 100%;
+        position: relative;
+        z-index: 99;
+    }
+}

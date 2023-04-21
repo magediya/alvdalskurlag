@@ -1,0 +1,52 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the floating-window component.
+// -----------------------------------------------------------------------------
+
+// floating-window
+.floating-window {
+    position: fixed;
+    right: 0;
+    top: 40%;
+    z-index: 991;
+    transform: translateX(calc(100% - 72px));
+    transition: ease all 0.3s;
+
+    &.open {
+        transform: translateX(0);
+    }
+
+    &__logo {
+        background-color: $color--green-5;
+        padding: 15px 10px 15px 15px;
+        border-radius: 5px 0 0 5px;
+        width: 72px;
+    }
+
+    &__description {
+        background-color: $bg-white;
+        padding: 10px;
+        color: $color--grey-2;
+        font-size: 10px;
+        line-height: 1.5;
+        width: 180px;
+    }
+
+    a {
+        color: $color--grey-2;
+    }
+
+    &__link {
+        display: block;
+        padding-top: 5px;
+    }
+
+    .icon--pefc-logo {
+        height: 60px;
+        width: 100%;
+        fill: #ffffff;
+        // .cls-1 { fill:none; }
+        // .cls-2 { clip-path:url(#clip-path); }
+        // .cls-3 { fill:#fff; }
+        // .cls-4 { clip-path:url(#clip-path-2); }
+    }
+}

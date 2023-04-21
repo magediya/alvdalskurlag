@@ -1,0 +1,216 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the SIDEBAR component.
+// -----------------------------------------------------------------------------
+
+.sidebar {
+    &__title {
+        display: block;
+        font-weight: 500;
+        padding-bottom: 15px;
+    }
+
+    li {
+        list-style: none;
+        padding-bottom: 6px;
+
+        a {
+            text-decoration: underline;
+            color: $text-color;
+
+            &:hover, &.active {
+                color: $link-color;
+            }
+        }
+    }
+
+    @at-root .checkboxes {
+        $this: &;
+
+        input[type='checkbox'] {
+            position: absolute;
+            width: 0;
+            height: 0;
+            opacity: 0;
+        }
+
+        label {
+            // font-weight: 300;
+            font-weight: 400;
+            margin-bottom: 0;
+            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        &.check-circle {
+            li {
+                padding-bottom: 11px;
+            }
+
+            label {
+                justify-content: space-between;
+            }
+
+            & #{$this}__label {
+                width: calc(100% - 46px);
+                padding-right: 11px;
+            }
+        }
+
+        &__mode {
+            @include square(25px);
+
+            font-size: pxtorem(25px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &.rotate-45 {
+                transform: rotate(45deg);
+            }
+
+            &.rotate-225 {
+                transform: rotate(225deg);
+            }
+
+            &.rotate-135 {
+                transform: rotate(135deg);
+            }
+
+            &.rotate-180 {
+                transform: rotate(180deg);
+            }
+
+            img {
+                display: block;
+            }
+
+            &.color-code {
+                @include circle(24px);
+
+                background-color: $color--grey-4;
+            }
+        }
+
+        &__label {
+            padding-left: 11px !important;
+            width: calc(100% - 20px);
+        }
+
+        &__squarebox {
+            @include square(15px);
+
+            border: 1px solid $bg-white;
+            position: relative;
+            overflow: hidden;
+            transition: ease background-color $transition-duration;
+
+            &:after {
+                content: "";
+                position: absolute;
+                width: 6px;
+                height: 6px;
+                border-right: 2px solid $bg-white;
+                border-bottom: 2px solid $bg-white;
+                top: -11px;
+                right: 3px;
+                transform: rotate(45deg);
+                transition: ease all $transition-duration;
+                opacity: 0;
+            }
+        }
+
+        input[type='checkbox']:checked + &__squarebox {
+            background-color: $color--green-5;
+
+            &:after {
+                opacity: 1;
+                top: 2px;
+            }
+        }
+    }
+
+    .dummy-box {
+        .checkboxes__squarebox {
+            visibility: hidden;
+        }
+    }
+
+    .searchbar {
+        border-bottom-color: $color--grey-7;
+
+        input[type=text] {
+            font-size: pxtorem($font-size-base);
+            width: calc(100% - 50px);
+            padding: 0;
+            height: 40px;
+        }
+
+        input[type=submit] {
+            @include square(40px);
+
+            background-size: 22px;
+        }
+    }
+
+    .multi-filter {
+        &__caret {
+            cursor: pointer;
+            display: block;
+            position: relative;
+            padding: 3px 0;
+            /*border-bottom: 1px solid rgba($color--white, 0.3);*/
+
+            em {
+                position: absolute;
+                top: 2px;
+                right: 2px;
+                display: block;
+                width: 36 / 20 * 1em;
+                height: 36 / 20 * 1em;
+                cursor: pointer;
+
+                &:after,
+                &:before {
+                    position: absolute;
+                    content: '';
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    display: block;
+                    margin: auto;
+                    width: 20 / 20 * 0.7em;
+                    height: 2px;
+                    background-color: $color--white;
+                }
+
+                &:after {
+                    transform: rotate(-90deg);
+                    transition: all .2s ease;
+                }
+            }
+
+        }
+
+        > li {
+            padding-bottom: 0;
+
+            &.active .multi-filter__caret em:after {
+                transform: rotate(0);
+            }
+        }
+
+        ul {
+            display: none;
+            padding-top: 6px;
+            margin-left: 6px;
+        }
+
+        .kvaliteter-item {
+            ul {
+                /*margin-left: 30px;*/
+            }
+        }
+    }
+}

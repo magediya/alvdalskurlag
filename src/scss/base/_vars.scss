@@ -1,0 +1,86 @@
+/* PATHS */
+$font-directory: '/assets/fonts/';
+
+$icons: "/assets/img/"; //#{$icons}
+
+/* BASE COLORS */
+
+// Greys
+$color--grey-1: #121212; // Background Dark grey
+$color--grey-2: #333333;
+$color--grey-3: #666666;
+$color--grey-4: #9d9d9d;
+$color--grey-5: #dadada;
+$color--grey-6: #e2e2e1;
+$color--grey-7: #7c7c7c;
+$color--white: #ffffff;
+
+// Browns
+$color--brown-1: #603d27;
+$color--brown-2: #896c53; // separator / line
+$color--brown-3: #d0c4ba; // BG
+$color--brown-4: #e7e1dc; // BG
+$color--brown-4: #f3f0ed; // BG
+$color--brown-6: #8a6d54; // Icons
+
+// Greens
+$color--green-1: #21221c; // Background Green tint
+$color--green-2: #23261d; // Focused Bg Green tint 2
+$color--green-3: #2C3120; // Focused Bg Green tint 3
+$color--green-4: #4e5328; // Saturated for elevation overlay (?)
+$color--green-5: #5b7631; // Brand color graphic elements
+$color--green-6: #6e8f3b; // Desaturated for more legible text
+$color--green-7: #85ad48; // Desaturated for more legible text
+$color--green-8: #181a14;
+
+$color--orange-1: #a6531a; // saturated for elevation overlay
+$color--orange-2: #dd7229; // Brand color
+$color--orange-3: #e69159; // Desaturated for more legible text
+
+/* NAMED COLORS */
+$bg-color: $color--grey-1;
+$bg-white : $color--white;
+$text-color: $color--white;
+$link-color: $color--orange-3;
+
+/* FONTS */
+$font--roboto: 'Roboto',
+sans-serif;
+
+/* SITE WIDTHS */
+$site-width: 1470px;
+$content-width: 1270px;
+
+/* RESPONSIVE BREAKPOINTS */
+$tiny: 300px;
+$small: 480px;
+$medium: 800px;
+$large: 1024px;
+$xlarge: 1200px;
+$xxlarge: 1500px;
+
+/* TRANSITIONS */
+$transition-duration: 0.3s;
+
+/// body contect text size
+$font-size-base: 16px !default;
+$font-size-large: $font-size-base+2 !default;
+
+/// heading font size
+$h1-text : 45px;
+$h2-text : 38px;
+$h3-text : 30px;
+$h4-text : 25px;
+$h5-text : 18px;
+$h6-text : 14px;
+
+$intro-text : 24px;
+
+// media query breakpoints.
+$breakpoints: ('xsm': 321px,
+    'sm': 641px,
+    'md': 813px,
+    'lg': 1025px);
+
+// spacing : padding and margin
+$spaceamounts: (0, 10, 20, 30, 40, 50, 80, 100, 120, 150);

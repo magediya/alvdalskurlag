@@ -1,0 +1,26 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass GALLERY.
+// -----------------------------------------------------------------------------
+
+.gallery {
+    &__btn-div {
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+        text-align: center;
+
+        @include respond-above(md) {
+            bottom: 50px;
+        }
+
+        .btn {
+            @include respond-above(md) {
+                min-width: 200px;
+            }
+
+            @include respond-below(sm) {
+                padding: 5px 20px;
+            }
+        }
+    }
+}

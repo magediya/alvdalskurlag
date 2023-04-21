@@ -1,0 +1,40 @@
+// @font-face
+// {
+//     font-family: 'Roboto';
+//     src: url('#{$font-directory}roboto-light-webfont.woff2') format('woff2'),
+//          url('#{$font-directory}roboto-light-webfont.woff') format('woff');
+//     font-weight: 300; // light
+//     font-style: normal;
+// }
+@font-face
+{
+    font-family: 'Roboto';
+    src: url('#{$font-directory}roboto-regular-webfont.woff2') format('woff2'),
+         url('#{$font-directory}roboto-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face
+{
+    font-family: 'Roboto';
+    src: url('#{$font-directory}roboto-medium-webfont.woff2') format('woff2'),
+         url('#{$font-directory}roboto-medium-webfont.woff') format('woff');
+    font-weight: 500; // medium
+    font-style: normal;
+}
+@font-face
+{
+    font-family: 'Roboto';
+    src: url('#{$font-directory}roboto-bold-webfont.woff2') format('woff2'),
+         url('#{$font-directory}roboto-bold-webfont.woff') format('woff');
+    font-weight: 700; // bold
+    font-style: normal;
+}
+// @font-face
+// {
+//     font-family: 'Le Havre Rough Wood';
+//     src: url('#{$font-directory}le_havre_rough_wood-webfont.woff2') format('woff2'),
+//          url('#{$font-directory}le_havre_rough_wood-webfont.woff') format('woff');
+//     font-weight: normal;
+//     font-style: normal;
+// }

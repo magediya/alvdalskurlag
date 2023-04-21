@@ -1,0 +1,57 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the breadcrumb component.
+// -----------------------------------------------------------------------------
+
+
+// breadcrumb
+.breadcrumb {
+    &:not(.below-banner){
+        position: absolute;
+        top: 66px;
+        width: 100%;
+
+        @include respond-above(md) {
+            top: 90px;
+        }
+    }
+    position: relative;
+    z-index: 991;
+
+    &__border {
+        border-top: 2px solid $bg-white;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        .below-banner & {
+            border-width: 0;
+            padding-top: 50px;
+        }
+    }
+
+    li,
+    a {
+        color: $text-color;
+        font-size: pxtorem($font-size-base - 2);
+        list-style: none;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: $link-color;
+    }
+
+    li:after {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 10px;
+        font-size: pxtorem(16px);
+
+        @include respond-below(sm) {
+            margin: 0 3px;
+            font-size: pxtorem(14px);
+        }
+    }
+
+    li:last-child:after {
+        display: none;
+    }
+}

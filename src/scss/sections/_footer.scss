@@ -1,0 +1,104 @@
+.site__footer {
+    @include respond-below(sm) {
+        p {
+            br {
+                display: none;
+            }
+        }
+
+        .btn {
+            display: block;
+            margin-bottom: 15px;
+        }
+    }
+
+    .f-heading {
+        color: $color--white;
+        font-size: pxtorem($font-size-large);
+        font-weight: 700;
+        display: block;
+    }
+
+    @at-root .socialfeed {
+        padding-top: 15px;
+
+        @include respond-below(sm) {
+            justify-content: space-around;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        li {
+            display: inline-block;
+            vertical-align: top;
+            padding-right: 25px;
+
+            a {
+                transition: ease all 0.4s;
+                transform: transformY(0);
+                display: block;
+
+                &:before {
+                    font-size: pxtorem(26px);
+                }
+
+                &:hover {
+                    color: $link-color;
+                    transform: translateY(-5px);
+                }
+            }
+        }
+    }
+
+    a {
+        font-size: pxtorem($font-size-base);
+        color: $text-color;
+        text-decoration: none;
+    }
+
+    .links {
+        @include respond-below(sm) {
+            order: -1;
+
+            ul {
+                width: 100%;
+                padding-bottom: 50px;
+            }
+        }
+
+        li {
+            list-style: none;
+            padding-bottom: 7px;
+
+            a {
+
+                &:hover,
+                &.active {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .footer-copy {
+        color: #20221b;
+        font-size: pxtorem($font-size-large);
+        font-weight: 700;
+        padding-top: 50px;
+
+        span ,
+        a {
+            color: #20221b;
+            padding-right: 30px;
+            font-size: inherit;
+
+            @include respond-below(sm) {
+                padding: 10px 0;
+                display: block;
+            }
+        }
+        a:hover{
+            color: $text-color;
+        }
+    }
+}

@@ -1,0 +1,124 @@
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: 100vh;
+    background-color: $color--grey-1;
+}
+
+.site__main {
+    flex: 1 auto;
+}
+
+.site-width,
+.content-width {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @include respond-above(md) {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    @include respond-above(lg) {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
+
+.site-width {
+    max-width: $site-width;
+}
+
+.content-width {
+    max-width: $content-width;
+}
+
+// Same as .content-width, but without the side padding.
+.image-width {
+    max-width: $content-width;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+hr {
+    border-width: 0;
+    margin: 0;
+    padding: 0;
+    border-bottom: 2px solid $color--brown-2;
+
+    &.hr-white {
+        border-color: $bg-white;
+    }
+}
+
+.intro-text, .intro-text p {
+    font-size: pxtorem($intro-text);
+    line-height: pxtorem($intro-text + 8);
+
+    @include respond-below(md) {
+        font-size: pxtorem($intro-text - 6);
+        line-height: pxtorem($intro-text);
+    }
+}
+
+.font-14 {
+    font-size: pxtorem($font-size-base - 2);
+}
+
+.link-white {
+    color: $text-color;
+}
+
+.text-grey {
+    color: $color--grey-2;
+}
+
+.text-black {
+    color: $color--grey-1;
+}
+
+.text-white {
+    color: $color--white;
+}
+
+.text-green {
+    color: $color--green-5;
+}
+
+.all-text-grey * {
+    color: $color--grey-2;
+}
+
+.green-bg {
+    background-color: $color--green-1;
+}
+
+.dark-grey {
+    background-color: $color--grey-1;
+}
+
+.grey-bg {
+    background-color: $color--grey-3;
+}
+
+.grey-6-bg {
+    background-color: $color--grey-6;
+}
+
+.white-bg {
+    background-color: $bg-white;
+}
+.light-brown-bg {
+    background-color: $color--brown-4;
+}
+
+.black-light-bg {
+    background-color: $color--green-8;
+}
+
+.dark-grey-color {
+    color: $color--grey-1;
+}

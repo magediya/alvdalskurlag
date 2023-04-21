@@ -1,0 +1,39 @@
+// partners
+.partners {
+    background-color: $color--green-8;
+
+    &__head-detail {
+        position: relative;
+        max-width: 820px;
+        margin: auto;
+        padding-top: 20px;
+
+        .bottom-arrow {
+            width: 20px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            @include respond-below(sm) {
+                display: none;
+            }
+        }
+    }
+
+    &__logos-group {
+        .logo {
+            display: inline-block;
+            vertical-align: top;
+            max-width: 120px;
+            margin: 40px;
+            @include respond-below(sm) {
+                display: block;
+                margin: 30px auto;
+            }
+
+            img {
+                display: block;
+                max-width: 100%;
+            }
+        }
+    }
+}

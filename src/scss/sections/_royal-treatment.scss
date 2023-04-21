@@ -1,0 +1,140 @@
+// treatment
+.royal-treatment {
+    position: relative;
+
+    .semi-header-arrow {
+        width: 100%;
+        position: absolute;
+        /*bottom: 100%;*/
+        z-index: 99;
+        bottom: 0;
+
+        .semi-header {
+            color: $color--grey-1;
+            padding-right: 60px;
+            max-width: 435px;
+            margin-bottom: 25px;
+        }
+
+        .bottom-arrow {
+            position: absolute;
+            right: 0;
+            width: 20px;
+        }
+    }
+
+    &__card {
+        position: relative;
+
+        img {
+            width: 100%;
+            display: block;
+
+            @include respond-below(sm) {
+                position: absolute;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .video {
+            @include respond-below(sm) {
+                margin-top: 20px;
+            }
+
+            img {
+                @include respond-below(sm) {
+                    position: relative;
+                    height: auto;
+                    object-fit: unset;
+                }
+            }
+
+            .video-icon {
+                img {
+                    width: auto;
+                    height: auto;
+                }
+            }
+
+            .overlay {
+                &:after {
+                    bottom: 0;
+                }
+            }
+        }
+    }
+
+    $root: &;
+
+    &__caption {
+        width: 100%;
+        left: 0;
+        position: absolute;
+        bottom: 25px;
+
+        #{$root}__caption-bg {
+            background-color: $color--grey-1;
+            max-width: 560px;
+
+            @include respond-below(sm) {
+                background-color: rgba(18, 18, 18, 0.50);
+                max-width: 100%;
+            }
+        }
+
+        @include respond-below(sm) {
+            position: relative;
+            bottom: 0;
+
+            .site-width {
+                padding: 0;
+            }
+        }
+    }
+
+    &__colors {
+        background-color: $color--grey-1;
+        text-align: center;
+
+        .innerwrap {
+            width: 660px;
+            max-width: 100%;
+            margin: auto;
+            display: block;
+        }
+        .btn-link{
+            font-size: pxtorem($font-size-large);
+        }
+    }
+
+    &__colors-group {
+
+        li {
+            list-style: none;
+            padding: 0 6px;
+            padding-bottom: 25px;
+            @include respond-below(sm) {
+                width: 33.33%;
+            }
+        }
+
+        .circle {
+            width: 75px;
+            height: 75px;
+            display: block;
+            margin: auto;
+            border-radius: 100%;
+            margin-bottom: 5px;
+
+            img {
+                border-radius: 100%;
+                display: block;
+            }
+        }
+
+        .color-name {
+            font-size: pxtorem($font-size-base);
+        }
+    }
+}

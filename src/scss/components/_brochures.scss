@@ -1,0 +1,143 @@
+.brochures {
+  &-carret {
+    color: currentColor;
+    text-decoration: none;
+
+    h2 {
+      position: relative;
+      border-bottom: 1px solid $bg-white;
+      margin-bottom: 0;
+      padding-bottom: 15px;
+      padding-right: 50px;
+
+      .menu__caret {
+        top: 10px;
+        width: 1em;
+        height: 1em;
+        font-size: 26px;
+
+        &.faqs {
+          top: 20px;
+        }
+      }
+    }
+
+    &.is-open {
+      .menu__caret {
+        &:after {
+          transform: rotate(0);
+        }
+      }
+    }
+  }
+
+  .text-grey {
+    .brochures-carret {
+      h2 {
+        border-bottom: 1px solid $color--grey-2;
+      }
+    }
+  }
+
+  .block-table {
+    &-brochures {
+      @include respond-below(md) {
+        width: 100%;
+        padding: 0;
+      }
+
+      &__row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        border-top: 1px solid $bg-white;
+
+        &__heading {
+          .heading-block {
+            display: flex;
+            flex-wrap: wrap;
+
+            .card-image {
+              width: 100px;
+              height: 100px;
+              margin-right: 20px;
+            }
+          }
+
+          @include respond-below(md) {
+            margin-bottom: 20px;
+          }
+        }
+
+        &__buttons {
+          display: flex;
+          flex-wrap: wrap;
+          height: max-content;
+
+          .brochures-btn {
+            margin-top: 0 !important;
+            padding-left: 10px;
+            padding-right: 10px;
+            fill: currentColor;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-right: 10px;
+
+            &:last-child {
+              margin-right: 0;
+            }
+            svg {
+              padding-left: 8px;
+              height: 28px;
+              width: 28px;
+            }
+
+            @include respond-below(sm) {
+              width: 100%;
+              margin: 0px;
+              margin-bottom: 10px;
+
+              &:last-child {
+                margin-bottom: 0;
+              }
+            }
+          }
+
+        }
+
+        @include respond-below(md) {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.border {
+  &-top {
+    border-top: 1px solid $bg-white;
+  }
+
+  &-bottom {
+    border-bottom: 1px solid $bg-white;
+  }
+
+  &-top, &-bottom {
+    &.w-2 {
+      border-width: 2px;
+    }
+  }
+}
+
+.text-grey {
+  .border {
+    &-top, &-bottom {
+      border-color: $color--grey-2;
+    }
+  }
+}
+
+.font-normal {
+  font-weight: 400;
+}

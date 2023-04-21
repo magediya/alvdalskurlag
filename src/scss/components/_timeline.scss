@@ -1,0 +1,178 @@
+.timeline {
+    position: relative;
+    margin-bottom: 50px;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: calc(50% - 2px);
+        width: 4px;
+        height: 100%;
+        background-color: $color--green-5;
+
+        @include respond-below(sm) {
+            left: 0;
+        }
+    }
+
+    &-row {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        padding-bottom: 45px;
+
+        @include respond-above(md) {
+            &:nth-child(even) {
+                flex-direction: row-reverse;
+                text-align: right;
+            }
+        }
+
+        &:last-child {
+            padding-bottom: 90px;
+
+            &:after {
+                content: "";
+                position: absolute;
+                bottom: -11px;
+                left: calc(50% - 3px);
+                @include respond-below(sm) {
+                    left: -1px;
+                }
+
+                @include square(6px);
+
+                border-radius: 100%;
+                background-color: $color--green-5;
+            }
+
+            &:before {
+                content: "";
+                position: absolute;
+                bottom: -20px;
+                left: calc(50% - 2px);
+
+                @include respond-below(sm) {
+                    left: 0;
+                }
+                @include square(4px);
+
+                border-radius: 100%;
+                background-color: $color--green-5;
+            }
+        }
+
+        &:not(:first-child) {
+            align-items: center;
+        }
+    }
+
+    &__year {
+        position: relative;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 16px;
+            left: -23px;
+            @include respond-above(md) {
+            .timeline-row:nth-child(even) & {
+                right: -23px;
+                left: auto;
+            }
+
+        }
+            @include circle(16px);
+
+            background-color: $color--green-5;
+        }
+    }
+
+    .small-text {
+        font-size: pxtorem(10px);
+        line-height: pxtorem(14px);
+        display: block;
+        text-align: left;
+        padding-top: 5px;
+    }
+
+    $imgPadding: 150px;
+
+    &__img {
+        padding-right: 30px;
+        width: 50%;
+
+        @include respond-below(sm) {
+            width: 100%;
+            padding-right: 0;
+            padding-left:15px;
+        }
+
+        @include respond-above(md) {
+        .timeline-row:nth-child(even) & {
+            padding-right: 0;
+            padding-left: 30px;
+        }
+    }
+
+        .card {
+            &:nth-child(odd) {
+                @include respond-above(md) {
+                    padding-left: $imgPadding;
+
+                    .timeline-row:nth-child(even) & {
+                        padding-left: 0;
+                        padding-right: $imgPadding;
+                    }
+                }
+            }
+
+            &:nth-child(even) {
+                padding-top: 30px;
+
+                @include respond-above(md) {
+                    padding-right: $imgPadding;
+                    .timeline-row:nth-child(even) & {
+                        padding-right: 0;
+                        padding-left: $imgPadding;
+                    }
+                }
+            }
+        }
+    }
+
+    &__detail {
+        width: 50%;
+        padding-left: 15px;
+
+        @include respond-below(sm) {
+            order: -1;
+            width: 100%;
+        }
+
+
+        .timeline-row:first-child & {
+            margin-top: -17px;
+        }
+        @include respond-above(md) {
+        .timeline-row:nth-child(even) & {
+            padding-left: 0;
+            padding-right: 15px;
+        }
+    }
+
+        .card {
+            padding-bottom: 20px;
+
+            @include respond-above(md) {
+                padding-right: $imgPadding;
+
+                .timeline-row:nth-child(even) & {
+                    padding-right: 0;
+                    padding-left: $imgPadding;
+                }
+            }
+        }
+    }
+}

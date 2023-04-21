@@ -1,0 +1,112 @@
+/* buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 33px;
+  vertical-align: top;
+  color: $text-color;
+  font-size: pxtorem($font-size-base);
+  line-height: 1.5;
+  text-align: center;
+  border-radius: 0px;
+  background-color: transparent;
+  text-decoration: none;
+  border: 1px solid $text-color;
+  margin-top: 20px;
+  transition: ease all 0.3s;
+
+  @include respond-below(sm) {
+    padding: 12px 10px;
+  }
+
+  @include respond-below(xsm) {
+    padding: 10px 15px;
+    font-size: pxtorem($font-size-base - 2);
+  }
+
+  &[class*=icon-]:before {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+    font-size: pxtorem(26px);
+  }
+
+  &:hover,
+  &:focus,
+  &.active {
+    cursor: pointer;
+    color: $color--grey-1;
+    text-decoration: none;
+    background-color: $color--white;
+  }
+
+  &-grey {
+    border: 1px solid $color--grey-2;
+    color: $color--grey-2;
+
+    &:hover,
+    &:focus,
+    &.active {
+      cursor: pointer;
+      color: $text-color;
+      text-decoration: none;
+      background-color: $color--grey-2;
+    }
+  }
+
+  &-grey-solid {
+    border: 1px solid $color--grey-1;
+    background-color: $color--grey-1;
+    color: $text-color;
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      color: $color--grey-1;
+      text-decoration: none;
+      background-color: $text-color;
+    }
+  }
+
+  &-link {
+    margin-bottom: 2px;
+    color: $text-color;
+    font-size: pxtorem($font-size-base + 3);
+    border-bottom: 1px solid $color--white;
+    text-decoration: none;
+    transition: ease all 0.3s;
+    line-height: 2;
+
+    img {
+      vertical-align: middle;
+    }
+
+    i {
+      width: 20px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+    &:hover,
+    &:focus {
+      border-color: $color--grey-1;
+      text-decoration: none;
+    }
+
+    &[class*=icon-] {
+      text-decoration: none;
+      border-bottom: 0;
+      display: inline-flex;
+      align-items: center;
+
+      &:before {
+        margin-right: 5px;
+      }
+    }
+
+    &-grey {
+      color: $color--grey-1;
+      border-bottom: 1px solid $color--grey-1;
+    }
+  }
+}
