@@ -50,6 +50,10 @@
         -ms-flex-align: end;
         align-items: flex-start;
     }
+
+    &-content-between{
+        align-content: space-between;
+    }
 }
 
 .justify {
@@ -247,6 +251,46 @@ $bp in $breakpoints {
 
     &-justify {
         text-align: justify;
+    }
+    &-uppercase{
+        text-transform: uppercase;
+    }
+}
+
+.font{
+    &-roboto{
+        font-family: $font--roboto !important;
+        &-mono{
+            font-family: $font--roboto-mono !important;
+        }
+    }
+    &-normal{
+        font-weight: 400;
+    }
+    &-light{
+        font-weight: 300 !important;
+    }
+    &-medium{
+        font-weight: 500 !important;
+    }
+    &-bold{
+        font-weight: 700;
+    }
+}
+.bg{
+    &-white{
+        background-color: $color--white;
+    }
+    &-product{
+        &-1{
+            background-color: $color-product-1;
+        }
+        &-2{
+            background-color: $color-product-2;
+        }
+        &-3{
+            background-color: $color-product-3;
+        }
     }
 }
 

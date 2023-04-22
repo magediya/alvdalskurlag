@@ -683,6 +683,10 @@ body {
   max-width: 1470px;
 }
 
+.site-width.large {
+  max-width: 1670px;
+}
+
 .content-width {
   max-width: 1270px;
 }
@@ -791,6 +795,47 @@ hr.hr-white {
   left: 565px;
 }
 
+h1,
+.h1 {
+  font-size: 2.8125rem;
+  line-height: 3.4375rem;
+  font-weight: 900;
+  margin-bottom: 15px;
+}
+
+h2,
+.h2 {
+  font-size: 2.375rem;
+  line-height: 3.125rem;
+  margin-bottom: 15px;
+}
+
+h3,
+.h3 {
+  font-size: 1.875rem;
+  line-height: 2.8125rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+h4,
+.h4 {
+  font-size: 1.5625rem;
+  line-height: 2.5rem;
+}
+
+h5,
+.h5 {
+  font-size: 1.125rem;
+  line-height: 1.625rem;
+}
+
+h6,
+.h6 {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+}
+
 /* align item */
 
 .d-flex {
@@ -845,6 +890,11 @@ hr.hr-white {
   -ms-flex-align: end;
   -webkit-box-align: start;
   align-items: flex-start;
+}
+
+.align-content-between {
+  -ms-flex-line-pack: justify;
+  align-content: space-between;
 }
 
 .justify-content-center {
@@ -3632,6 +3682,50 @@ hr.hr-white {
   text-align: justify;
 }
 
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.font-roboto {
+  font-family: "Roboto", sans-serif !important;
+}
+
+.font-roboto-mono {
+  font-family: "Roboto Mono", monospace !important;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.font-light {
+  font-weight: 300 !important;
+}
+
+.font-medium {
+  font-weight: 500 !important;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+.bg-product-1 {
+  background-color: #7C563D;
+}
+
+.bg-product-2 {
+  background-color: #6E747D;
+}
+
+.bg-product-3 {
+  background-color: #262626;
+}
+
 @media (max-width: 640px) {
   .order-sm-1 {
     -webkit-box-ordinal-group: 2;
@@ -3721,47 +3815,6 @@ hr.hr-white {
   margin-top: 20px;
   -webkit-transition: ease all 0.3s;
   transition: ease all 0.3s;
-}
-
-h1,
-.h1 {
-  font-size: 2.8125rem;
-  line-height: 3.4375rem;
-  font-weight: 900;
-  margin-bottom: 15px;
-}
-
-h2,
-.h2 {
-  font-size: 2.375rem;
-  line-height: 3.125rem;
-  margin-bottom: 15px;
-}
-
-h3,
-.h3 {
-  font-size: 1.875rem;
-  line-height: 2.8125rem;
-  font-weight: 500;
-  margin-bottom: 10px;
-}
-
-h4,
-.h4 {
-  font-size: 1.5625rem;
-  line-height: 2.5rem;
-}
-
-h5,
-.h5 {
-  font-size: 1.125rem;
-  line-height: 1.625rem;
-}
-
-h6,
-.h6 {
-  font-size: 0.875rem;
-  line-height: 1.375rem;
 }
 
 .site__header {
@@ -4054,9 +4107,12 @@ h6,
   transition: ease all 0.3s;
   border-top: 1px solid #ffffff;
   text-align: right;
+  width: 0;
+  overflow: hidden;
 }
 
 .flyoutmenu.is-open {
+  width: auto;
   -webkit-transform: translateX(0);
   transform: translateX(0);
 }

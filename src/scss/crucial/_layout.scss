@@ -30,6 +30,10 @@ body {
 
 .site-width {
     max-width: $site-width;
+    
+    &.large{
+        max-width: $site-width-large;        
+    }
 }
 
 .content-width {

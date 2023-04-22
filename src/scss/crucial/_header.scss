@@ -270,8 +270,11 @@
     transition: ease all $transition-duration;
     border-top: 1px solid $color--white;
     text-align: right;
+    width: 0;
+    overflow: hidden;
 
     &.is-open {
+        width: auto;
         transform: translateX(0);
 
         @include respond-below(sm) {

@@ -38,6 +38,10 @@ $color--orange-1: #a6531a; // saturated for elevation overlay
 $color--orange-2: #dd7229; // Brand color
 $color--orange-3: #e69159; // Desaturated for more legible text
 
+$color-product-1 : #7C563D;
+$color-product-2 : #6E747D;
+$color-product-3 : #262626;
+
 /* NAMED COLORS */
 $bg-color: $color--grey-1;
 $bg-white : $color--white;
@@ -45,12 +49,13 @@ $text-color: $color--white;
 $link-color: $color--orange-3;
 
 /* FONTS */
-$font--roboto: 'Roboto',
-sans-serif;
+$font--roboto: 'Roboto',sans-serif;
+$font--roboto-mono: 'Roboto Mono', monospace;
 
 /* SITE WIDTHS */
 $site-width: 1470px;
 $content-width: 1270px;
+$site-width-large: 1670px;
 
 /* RESPONSIVE BREAKPOINTS */
 $tiny: 300px;
