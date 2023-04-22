@@ -26,23 +26,23 @@ $(document).ready(function ($) {
 		e.stopPropagation();
 	});
 
-  	var clickable = $( '.flyoutmenu__menu-top' ).attr( 'data-clickable' );
-  	$( '.flyoutmenu__menu-top > ul > li' ).each(function(index, el) {
-  		if($(this).find('ul').length)
-  		{
-			$(this).addClass( 'has-sub' );
-  		}
-  	});
-  	$( '.flyoutmenu__menu-top .has-sub>a' ).after( '<em class="menu__caret">' );
+  	// var clickable = $( '.flyoutmenu__menu-top' ).attr( 'data-clickable' );
+  	// $( '.flyoutmenu__menu-top > ul > li' ).each(function(index, el) {
+  	// 	if($(this).find('ul').length)
+  	// 	{
+	// 		$(this).addClass( 'has-sub' );
+  	// 	}
+  	// });
+  	// $( '.flyoutmenu__menu-top .has-sub>a' ).appendTo( '<em class="menu__caret">' );
 
-	if ( clickable == 'true' )
-	{
-		$( '.flyoutmenu__menu-top .has-sub>.menu__caret' ).addClass( 'trigger-caret' );
-	}
-	else
-	{
-		$( '.flyoutmenu__menu-top .has-sub>a' ).addClass( 'trigger-caret' ).attr( 'href','javascript:;' );
-	}
+	// if ( clickable == 'true' )
+	// {
+	// 	$( '.flyoutmenu__menu-top .has-sub>.menu__caret' ).addClass( 'trigger-caret' );
+	// }
+	// else
+	// {
+	// 	$( '.flyoutmenu__menu-top .has-sub>a' ).addClass( 'trigger-caret' ).attr( 'href','javascript:;' );
+	// }
 
 	/* menu open and close on single click */
 	$( '.flyoutmenu__menu-top .has-sub>.trigger-caret' ).click( function() {
