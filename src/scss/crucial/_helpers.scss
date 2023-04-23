@@ -27,6 +27,10 @@
     &-row-reverse {
         flex-direction: row-reverse;
     }
+
+    &-1{
+        flex: 1;
+    }
 }
 
 
@@ -255,6 +259,9 @@ $bp in $breakpoints {
     &-uppercase{
         text-transform: uppercase;
     }
+    &-2xl{
+        font-size: 25px;
+    }
 }
 
 .font{
@@ -272,6 +279,9 @@ $bp in $breakpoints {
     }
     &-medium{
         font-weight: 500 !important;
+    }
+    &-semibold{
+        font-weight: 600 !important;
     }
     &-bold{
         font-weight: 700;
@@ -291,6 +301,18 @@ $bp in $breakpoints {
         &-3{
             background-color: $color-product-3;
         }
+        &-4{
+            background-color: $color-product-4;
+        }
+        &-5{
+            background-color: $color-product-5;
+        }
+        &-6{
+            background-color: $color-product-6;
+        }
+        &-7{
+            background-color: $color-product-7;
+        }
     }
 }
 
@@ -304,4 +326,9 @@ $bp in $breakpoints {
     .order-md-1 {
         order: 1;
     }
+}
+
+.mx-auto{
+    margin-left: auto;
+    margin-right: auto;
 }

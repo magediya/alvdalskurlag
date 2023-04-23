@@ -70,12 +70,15 @@
             width: 100%;
            &:nth-child(1){
             @include respond-above(md){
+                width: 30%;
+            }
+            @include respond-above(lg){
                 width: 17%;
             }
            }
            &:nth-child(2){
                 @include respond-above(md){
-                    width: 22%;
+                    width: 35%;
                 }
                 @include respond-above(lg){
                     width: 25%;
@@ -83,7 +86,7 @@
            }
            &:nth-child(3){
                 @include respond-above(md){
-                    width: 22%;
+                    width: 35%;
                 }
                 @include respond-above(lg){
                     width: 25%;
@@ -91,7 +94,7 @@
            }
            &:nth-child(4){
                 @include respond-above(md){
-                    width: 22%;
+                    width: 100%;
                 }
                 @include respond-above(lg){
                     width: 25%;

@@ -1,12 +1,49 @@
+.lp-head-space{
+    padding-top: 150px;
+    &:after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 250px;
+        background: linear-gradient(360deg, rgba(0, 0, 0, 0) -4.15%, rgba(0, 0, 0, 0.54) 43.58%, #000000 91.86%);
+    }
+
+    &-inner{
+        position: relative;
+        z-index: 2;
+    }
+}
+.sbo-1{
+    @include respond-below(md) {
+       background-color: #EEEEEE;
+       padding-top: 20px;
+       .link-arrow{
+        color: #000;
+       }
+    }
+}
 .section-banner{
     position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+
     .sb{
         &-img{
             height: 100vh;
             min-height: 500px;
             object-fit: cover;
             width: 100%;
+            border-radius: 5px;
             display: block;
+
+            .sbo-1 &{
+                height: auto;
+                @include respond-below(md) {
+                    min-height: auto;
+                }
+            }
         }
         &-content-width{
             max-width: 680px;
@@ -18,12 +55,21 @@
             }
         }
         &-caption{
-            position: absolute;
-            left: 0;top: 0;
-            width: 100%;
-            height: 100%;
             display: flex;
             flex-wrap: wrap;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            
+            .sbo-1 &{
+                @include respond-below(md) {
+                    position: static;
+                    color: #000000;
+                    text-align: left;
+                }
+            }
 
             &:after{
                 content: '';
@@ -33,13 +79,28 @@
                 width: 100%;
                 height: 80%;
                 background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+
+                .sbo-1 &{
+                    @include respond-below(md) {
+                        display: none;
+                    }
+                }
             }
 
             padding-top: 50px;
             padding-bottom: 50px;
+            .sbo-1 &{
+                padding-top: 30px;
+                padding-bottom: 30px;
+            }
             @include respond-above(lg) {
                 padding-top: 180px;
                 padding-bottom: 180px;
+
+                .sbo-1 &{
+                    padding-top: 50px;
+                    padding-bottom: 50px;
+                }
             }
 
             p {
@@ -52,6 +113,10 @@
                     font-size: 80px;
                     line-height: 1.1;
                 }
+            }
+            .text-2xl{
+                font-size: 25px;
+                line-height: 1.2;
             }
             
             &.bottom-left{
@@ -75,21 +140,19 @@
     width: 1em;
     height: 1em;
     border-radius: 100%;
-    border: 1px solid $color--white;
+    border: 1px solid currentColor;
     background: rgba(249, 249, 249, 0.21);
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 30px;
+    color: #ffffff;
 
     .inline-arrow &{
         margin-top: 0;
     }
 
 }
-
-
-
 .product-banner{
     margin-top: 50px;
     margin-bottom: 50px;
@@ -151,6 +214,155 @@
                 }
                 color: #000;
             }
+        }
+    }
+}
+
+.mobile-order-first{
+    @include respond-below(md){
+        order: -1;
+    }
+
+}
+
+.lp-card-image{
+    border-radius: 5px;
+    overflow: hidden;
+
+
+    &.no-ratio-mobile{
+        @include respond-below(md){
+            padding-top: 0;
+
+            .ci-caption{
+                position: static;
+            }
+        }
+    }
+
+    .ci{
+        &-caption{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 30px;
+
+            @media (min-width:1470px) {
+                padding: 60px;
+
+                .h1{
+                    font-size: 80px;
+                    line-height: 1.1;
+                }
+
+                .link-arrow{
+                    font-size: 66px;
+                }
+            }
+        }
+
+        &-semiheading{
+            font-size: 20px;
+            display: block;
+            margin-bottom: 15px;
+            @include respond-above(md){
+                font-size: 25px;
+            }
+        }
+        &-desc{
+            @include respond-above(md){
+                font-size: 18px;
+            }
+        }
+
+        &-grid{
+            position: absolute;
+            top: 0;left: 0;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-gap:16px;
+            grid-template-columns: repeat(2, 1fr);
+
+            img{
+                width: 100%;
+                height: 100%;object-fit: cover ;
+            }
+        }
+    }
+}
+.full-width-card{
+    position: relative;
+    .fwc{
+        &-caption{
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            bottom: 20px;
+            width: calc(50% - 20px);
+            border-radius: 5px;
+            overflow: hidden;
+
+            @include respond-below(md){
+                width: auto;
+                top: auto;
+                left: 16px;
+                right: 16px;
+                bottom: 16px;
+            }
+            
+            &-wrap{
+                position: relative;
+                width: 100%;
+                height: 100%;
+                img{
+                    height: 100%;
+                    width: 100%;
+                    @include respond-below(md){
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+
+            &-inner{
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                padding: 20px;
+                @include respond-above(md){
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+                @include respond-above(lg){
+                    padding: 50px;
+                }
+
+                @media (min-width:1470px) {
+                    padding: 80px;
+                    .link-arrow{
+                        font-size: 66px;
+                    }
+                }
+            }
+        }
+        &-semiheading{
+            font-size: 25px;
+            display: block;
+            margin-bottom: 15px;
+        }
+        &-desc{
+            font-size: 18px;
         }
     }
 }
