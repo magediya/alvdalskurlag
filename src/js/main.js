@@ -41,6 +41,10 @@ $(document).ready(function ($) {
     }
   });
 
+  $(document).on('click', '.mobile-search .header-search', function(event) {
+    $(this).parent().addClass('searchIsShow');
+  });
+
   addFavCount();
 
 });

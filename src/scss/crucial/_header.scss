@@ -215,49 +215,59 @@
             border: 1px solid $color--white;
             border-radius: 5px;
             margin-left: 20px;
-
-            button{
-                height: 33px;
-                width: 40px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border-width: 0 ;
-                border-right: 1px solid $color--white;
-                box-shadow: none;
-                background-color: transparent;
-                outline: none;
-                padding: 0;
-                margin: 0;
+            
+            .mobile-search &{
+                margin-right: 10px;
+                margin-left: 0;
+                border-color: transparent;
             }
 
-            input{
-                height: 33px;
+            .searchIsShow &{
+                border-color: $color--white;
+            }
+
+        }
+        &-button{
+            height: 33px;
+            width: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-width: 0 ;
+            border-right: 1px solid $color--white;
+            box-shadow: none;
+            background-color: transparent;
+            outline: none;
+            padding: 0;
+            margin: 0;
+            .mobile-search &{
+                border-color: transparent;
+                pointer-events: none;
+            }
+            .searchIsShow &{
+                border-right-color:$color--white;
+                pointer-events: auto;
+            }
+
+        }
+
+        &-input{
+            height: 33px;
+            width: 150px;
+            text-align: center;
+            border-width: 0;
+            background-color: transparent;
+            transition: ease 0.3s;
+            .mobile-search &{
+                width: 0;
+                padding: 0;
+            }
+            .searchIsShow &{
                 width: 150px;
-                text-align: center;
-                border-width: 0;
-                background-color: transparent;
+                padding-left: 15px;
+                padding-right: 15px;
             }
         }
-    }
-}
-
-.searchIcon{
-    width: 36px;
-    height: 36px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-width: 0 ;
-    box-shadow: none;
-    background-color: transparent;
-    outline: none;
-    padding: 0;
-    margin: 0; 
-    margin-right: 10px;
-    
-    @include respond-above(lg){
-        display: none;
     }
 }
 
@@ -274,7 +284,7 @@
     overflow: hidden;
 
     &.is-open {
-        width: auto;
+        width: 100%;
         transform: translateX(0);
 
         @include respond-below(sm) {
@@ -290,6 +300,7 @@
         flex-direction: column;
         height: 100vh;
         max-width: 100%;
+        margin-left: auto;
         @include respond-below(md) {
             @include cssScrollbar(#292e1f, #1d1d1b, 10px);
         }

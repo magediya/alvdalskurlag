@@ -23390,6 +23390,9 @@ $(document).ready(function ($) {
       $(this).stop().addClass('is-open').stop().next().stop().slideDown();
     }
   });
+  $(document).on('click', '.mobile-search .header-search', function (event) {
+    $(this).parent().addClass('searchIsShow');
+  });
   addFavCount();
 });
 $(window).on('resize', function () {
