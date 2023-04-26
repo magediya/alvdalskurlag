@@ -1,0 +1,31 @@
+.product-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    grid-auto-rows: minmax(100px, auto);
+
+    .pg{
+        &-card{
+            position: relative;
+
+            &:first-child{
+                grid-column: 1 / 3;
+            }
+
+            img{
+                display: block;
+            }
+        }
+        &-caption{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+
+            @include respond-above(xl){
+                padding: 5rem;
+            }
+        }
+    }
+}

@@ -33,6 +33,7 @@ $color--green-5: #5b7631; // Brand color graphic elements
 $color--green-6: #6e8f3b; // Desaturated for more legible text
 $color--green-7: #85ad48; // Desaturated for more legible text
 $color--green-8: #181a14;
+$color--green-9: #667631;
 
 $color--orange-1: #a6531a; // saturated for elevation overlay
 $color--orange-2: #dd7229; // Brand color
@@ -90,7 +91,8 @@ $intro-text : 24px;
 $breakpoints: ('xsm': 321px,
     'sm': 641px,
     'md': 813px,
-    'lg': 1025px);
+    'lg': 1025px,
+    'xl': 1280px);
 
 // spacing : padding and margin
 $spaceamounts: (0, 10, 20, 30, 40, 50, 80, 100, 120, 150);

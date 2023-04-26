@@ -264,24 +264,53 @@ $bp in $breakpoints {
     }
 }
 
+.text{
+    &-4xl{
+        font-size: 2.25rem;
+    }
+}
+@include respond-above(md){
+    .text{
+        &-md{
+            &-lg{
+                font-size: 1.125rem;
+            }
+            &-5xl{
+                font-size: 3rem;
+                line-height: 1.2;
+            }
+        }
+    }
+}
+@include respond-above(lg){
+    .text{
+        &-lg{
+            &-8xl{
+                font-size: 5rem;
+                line-height: 1.2;
+            }
+        }
+    }
+}
+
 .font{
     &-roboto{
-        font-family: $font--roboto !important;
+        font-family: $font--roboto;
         &-mono{
-            font-family: $font--roboto-mono !important;
+            font-family: $font--roboto-mono;
         }
     }
     &-normal{
         font-weight: 400;
     }
     &-light{
-        font-weight: 300 !important;
+        font-weight: 300;
     }
     &-medium{
-        font-weight: 500 !important;
+        font-weight: 500;
     }
     &-semibold{
-        font-weight: 600 !important;
+        font-weight: 600;
     }
     &-bold{
         font-weight: 700;

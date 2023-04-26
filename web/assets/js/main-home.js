@@ -5728,7 +5728,7 @@
 
 /***/ }),
 
-/***/ "./node_modules/jquery/dist/jquery.js":
+/***/ "./node_modules/jquery/dist/jquery.js?1157":
 /*!********************************************!*\
   !*** ./node_modules/jquery/dist/jquery.js ***!
   \********************************************/
@@ -16612,14 +16612,14 @@ return jQuery;
 
 /***/ }),
 
-/***/ "./node_modules/jquery/dist/jquery.js-exposed":
-/*!****************************************************!*\
-  !*** ./node_modules/jquery/dist/jquery.js-exposed ***!
-  \****************************************************/
+/***/ "./node_modules/jquery/dist/jquery.js?d0be":
+/*!********************************************!*\
+  !*** ./node_modules/jquery/dist/jquery.js ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["$"] = __webpack_require__(/*! -!./jquery.js */ "./node_modules/jquery/dist/jquery.js");
+/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["$"] = __webpack_require__(/*! -!./jquery.js */ "./node_modules/jquery/dist/jquery.js?1157");
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
@@ -16656,7 +16656,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 (function (factory) {
     'use strict';
     if (true) {
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js-exposed")], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js?d0be")], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -16917,7 +16917,7 @@ module.exports = g;
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, $) {// This loads jQuery (automatically found in /node_modules/jquery)
-global.$ = global.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js-exposed"); // For popup
+global.$ = global.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js?d0be"); // For popup
 
 __webpack_require__(/*! @fancyapps/fancybox */ "./node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js"); // For parallax
 
@@ -17048,7 +17048,7 @@ function addFavCount() {
     }
   }
 }
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js-exposed")))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js?d0be")))
 
 /***/ }),
 
@@ -17079,7 +17079,7 @@ $(document).ready(function ($) {
     }
   });
 });
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js-exposed")))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js?d0be")))
 
 /***/ }),
 
@@ -17152,7 +17152,7 @@ $(document).ready(function ($) {
   });
   $('li.a-open').find('.trigger-caret').click();
 });
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js-exposed")))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js?d0be")))
 
 /***/ }),
 
@@ -17294,7 +17294,7 @@ $(document).ready(function ($) {
     return "";
   }
 });
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js-exposed")))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js?d0be")))
 
 /***/ }),
 
@@ -17338,13 +17338,13 @@ $(document).ready(function ($) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /opt/homebrew/var/www/amici/shannon/html/alvdalskurlag/src/js/main-home.js */"./src/js/main-home.js");
-__webpack_require__(/*! /opt/homebrew/var/www/amici/shannon/html/alvdalskurlag/src/js/modules/hamburger-menu.js */"./src/js/modules/hamburger-menu.js");
-__webpack_require__(/*! /opt/homebrew/var/www/amici/shannon/html/alvdalskurlag/src/js/modules/floating-window.js */"./src/js/modules/floating-window.js");
-__webpack_require__(/*! /opt/homebrew/var/www/amici/shannon/html/alvdalskurlag/src/js/modules/plukkliste.js */"./src/js/modules/plukkliste.js");
-__webpack_require__(/*! /opt/homebrew/var/www/amici/shannon/html/alvdalskurlag/src/scss/crucial.scss */"./src/scss/crucial.scss");
-__webpack_require__(/*! /opt/homebrew/var/www/amici/shannon/html/alvdalskurlag/src/scss/main.scss */"./src/scss/main.scss");
-module.exports = __webpack_require__(/*! /opt/homebrew/var/www/amici/shannon/html/alvdalskurlag/src/scss/cp.scss */"./src/scss/cp.scss");
+__webpack_require__(/*! D:\clients\spm\OTA\alvdalskurlag\src\js\main-home.js */"./src/js/main-home.js");
+__webpack_require__(/*! D:\clients\spm\OTA\alvdalskurlag\src\js\modules\hamburger-menu.js */"./src/js/modules/hamburger-menu.js");
+__webpack_require__(/*! D:\clients\spm\OTA\alvdalskurlag\src\js\modules\floating-window.js */"./src/js/modules/floating-window.js");
+__webpack_require__(/*! D:\clients\spm\OTA\alvdalskurlag\src\js\modules\plukkliste.js */"./src/js/modules/plukkliste.js");
+__webpack_require__(/*! D:\clients\spm\OTA\alvdalskurlag\src\scss\crucial.scss */"./src/scss/crucial.scss");
+__webpack_require__(/*! D:\clients\spm\OTA\alvdalskurlag\src\scss\main.scss */"./src/scss/main.scss");
+module.exports = __webpack_require__(/*! D:\clients\spm\OTA\alvdalskurlag\src\scss\cp.scss */"./src/scss/cp.scss");
 
 
 /***/ })
