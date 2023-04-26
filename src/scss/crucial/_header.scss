@@ -207,6 +207,12 @@
     }
 }
 
+.mobile-search {
+    @include respond-above(lg){
+        display: none;
+    }
+}
+
 .header-search{
     .hs{
         &-row{
@@ -240,6 +246,8 @@
             outline: none;
             padding: 0;
             margin: 0;
+            cursor: pointer;
+            
             .mobile-search &{
                 border-color: transparent;
                 pointer-events: none;
@@ -276,31 +284,40 @@
     top: 100%;
     right: 0;
     z-index: 1000;
-    transform: translateX(100%);
-    transition: ease all $transition-duration;
+    // transform: translateX(100%);
     border-top: 1px solid $color--white;
     text-align: right;
-    width: 0;
+    width: 100%;
     overflow: hidden;
-
+    pointer-events: none;
+    
+    
     &.is-open {
-        width: 100%;
-        transform: translateX(0);
-
-        @include respond-below(sm) {
-            width: 100%;
+        // width: 100%;
+        // transform: translateX(0);
+        
+        // @include respond-below(sm) {
+            //     width: 100%;
+            // }
+            
+            pointer-events: initial;
+            
+            .flyoutmenu__menu-state{
+                transform: translateX(0);
+            }
         }
-    }
-
-    &__menu-state {
-        background-color: $color--brown-5;
-        width: 490px;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
-        max-width: 100%;
-        margin-left: auto;
+        
+        &__menu-state {
+            background-color: $color--brown-5;
+            width: 490px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            height: calc(100vh - 85px);
+            max-width: 100%;
+            margin-left: auto;
+            transition: ease all $transition-duration;
+            transform: translateX(100%);
         @include respond-below(md) {
             @include cssScrollbar(#292e1f, #1d1d1b, 10px);
         }
