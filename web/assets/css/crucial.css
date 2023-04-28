@@ -4440,7 +4440,7 @@ h6,
   font-size: 1rem;
   line-height: 1.5;
   text-align: center;
-  border-radius: 0px;
+  border-radius: 2px;
   background-color: transparent;
   text-decoration: none;
   border: 1px solid #ffffff;
@@ -5478,6 +5478,27 @@ li.is-open .menu__caret:before {
   height: 100%;
   background: -webkit-gradient(linear, left top, right top, color-stop(58.33%, #000000), to(rgba(0, 0, 0, 0)));
   background: linear-gradient(90deg, #000000 58.33%, rgba(0, 0, 0, 0) 100%);
+}
+
+.page-banner.changemobile .pb-caption-left-center {
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  padding-bottom: 60px;
+}
+
+.page-banner.changemobile .pb-caption-left-center:before {
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(58.33%, #000000), to(rgba(0, 0, 0, 0)));
+  background: linear-gradient(360deg, #000000 58.33%, rgba(0, 0, 0, 0) 100%);
+  width: 100%;
+  height: 50%;
+  top: auto;
+  bottom: 0;
+}
+
+.page-banner.changemobile .pb-img {
+  -o-object-position: right;
+  object-position: right;
 }
 
 .royal-treatment.banner .royal-treatment__card .royal-treatment__caption .royal-treatment__caption-bg {

@@ -86,7 +86,7 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./node_modules/jquery/dist/jquery.js?1157":
+/***/ "./node_modules/jquery/dist/jquery.js":
 /*!********************************************!*\
   !*** ./node_modules/jquery/dist/jquery.js ***!
   \********************************************/
@@ -10970,14 +10970,14 @@ return jQuery;
 
 /***/ }),
 
-/***/ "./node_modules/jquery/dist/jquery.js?d0be":
-/*!********************************************!*\
-  !*** ./node_modules/jquery/dist/jquery.js ***!
-  \********************************************/
+/***/ "./node_modules/jquery/dist/jquery.js-exposed":
+/*!****************************************************!*\
+  !*** ./node_modules/jquery/dist/jquery.js-exposed ***!
+  \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["$"] = __webpack_require__(/*! -!./jquery.js */ "./node_modules/jquery/dist/jquery.js?1157");
+/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["$"] = __webpack_require__(/*! -!./jquery.js */ "./node_modules/jquery/dist/jquery.js");
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
@@ -11021,7 +11021,7 @@ module.exports = g;
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, $) {// This loads jQuery (automatically found in /node_modules/jquery)
-global.$ = global.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js?d0be");
+global.$ = global.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js-exposed");
 $(document).ready(function ($) {
   document.addEventListener('DOMContentLoaded', function () {
     fitContent();
@@ -11114,7 +11114,7 @@ function addFavCount() {
     }
   }
 }
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js?d0be")))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js-exposed")))
 
 /***/ }),
 
@@ -11187,7 +11187,7 @@ $(document).ready(function ($) {
   });
   $('li.a-open').find('.trigger-caret').click();
 });
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js?d0be")))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js-exposed")))
 
 /***/ }),
 
@@ -11306,7 +11306,7 @@ function log() {
     console.log(message);
   }
 }
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js?d0be")))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js-exposed")))
 
 /***/ }),
 
@@ -11317,9 +11317,9 @@ function log() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /opt/homebrew/var/www/amici/shannon/html/alvdalskurlag/src/js/main-press.js */"./src/js/main-press.js");
-__webpack_require__(/*! /opt/homebrew/var/www/amici/shannon/html/alvdalskurlag/src/js/modules/hamburger-menu.js */"./src/js/modules/hamburger-menu.js");
-module.exports = __webpack_require__(/*! /opt/homebrew/var/www/amici/shannon/html/alvdalskurlag/src/js/modules/press-search.js */"./src/js/modules/press-search.js");
+__webpack_require__(/*! D:\clients\spm\OTA\alvdalskurlag\src\js\main-press.js */"./src/js/main-press.js");
+__webpack_require__(/*! D:\clients\spm\OTA\alvdalskurlag\src\js\modules\hamburger-menu.js */"./src/js/modules/hamburger-menu.js");
+module.exports = __webpack_require__(/*! D:\clients\spm\OTA\alvdalskurlag\src\js\modules\press-search.js */"./src/js/modules/press-search.js");
 
 
 /***/ })

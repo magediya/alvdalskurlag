@@ -165,3 +165,51 @@ function addFavCount()
     }
   }
 }
+
+$(() => {
+  // jQuery document ready
+  $('.inspiration-carousel').slick({
+    centerMode: true,
+    centerPadding: '22%',
+    slidesToShow: 2,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1280,
+        settings: {
+          centerPadding: '15%',
+        }
+      },
+      {
+        breakpoint: 821,
+        settings: {
+          centerPadding: '8%',
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          centerPadding: '40px',
+          slidesToShow: 1
+        }
+      }
+    ]
+  });
+
+  // tab
+  $('.about-team .at-cell.at-tab-1').show();
+  $('.at-tab li').on('click',function(){
+    $('.about-team .at-cell').hide();
+    $('.about-team .at-cell.'+$(this).attr('data-tab')).show();
+    $('.at-tab li').not(this).removeClass('isShow');
+    $(this).addClass('isShow')
+  });
+
+  $(".prev-btn").on('click',function(){
+		 $('.inspiration-carousel').slick("slickPrev");
+	});
+
+	$(".next-btn").on('click',function(){
+		 $('.inspiration-carousel').slick("slickNext");
+	});
+});

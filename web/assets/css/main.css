@@ -4893,6 +4893,44 @@ blockquote:before {
   }
 }
 
+.inspiration-carousel-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.inspiration-carousel-nav .link-arrow {
+  color: #000000;
+  margin-top: 0;
+}
+
+.inspiration-carousel-nav .link-arrow + .link-arrow {
+  margin-left: 20px;
+}
+
+.inspiration-carousel .ic-card-image {
+  position: relative;
+}
+
+.inspiration-carousel .ic-card-image:before {
+  content: "";
+  padding-top: calc((650 / 480) * 100%);
+  display: block;
+}
+
+.inspiration-carousel .ic-card-image > img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
 .inspiration-carousel .ic-caption {
   position: absolute;
   bottom: 0;
@@ -4909,31 +4947,40 @@ blockquote:before {
   }
 }
 
-.about-us-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+@media (min-width: 813px) {
+  .about-team .at-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
 }
 
-.about-us-grid .aug-cell {
+.about-team .at-cell {
   position: relative;
   border-radius: 5px;
   overflow: hidden;
 }
 
-.about-us-grid .aug-cell img {
+@media (max-width: 812px) {
+  .about-team .at-cell {
+    display: none;
+  }
+}
+
+.about-team .at-cell img {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
   object-fit: cover;
+  display: block;
 }
 
-.about-us-grid .aug-cell.oss {
+.about-team .at-cell.oss {
   grid-row: 1/4;
   grid-column: 2/2;
 }
 
-.about-us-grid .aug-caption {
+.about-team .at-caption {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -4947,16 +4994,16 @@ blockquote:before {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding: 1.25rem;
+  padding: 2.125rem 1.25rem;
 }
 
 @media (min-width: 1025px) {
-  .about-us-grid .aug-caption {
+  .about-team .at-caption {
     padding: 2.5rem;
   }
 }
 
-.about-us-grid .aug-caption::before {
+.about-team .at-caption::before {
   content: "";
   position: absolute;
   top: 0;
@@ -4967,7 +5014,7 @@ blockquote:before {
   background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 61.98%, #000000 100%);
 }
 
-.about-us-grid .aug-caption::after {
+.about-team .at-caption::after {
   content: "";
   position: absolute;
   top: 0;
@@ -4978,28 +5025,28 @@ blockquote:before {
   background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 71.35%);
 }
 
-.about-us-grid .aug-caption.main-cap {
+.about-team .at-caption.main-cap {
   height: auto;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(47.92%, rgba(0, 0, 0, 0.7)), to(#000000));
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 47.92%, #000000 100%);
-  padding: 1.25rem;
+  padding: 2.125rem 1.25rem;
 }
 
 @media (min-width: 1025px) {
-  .about-us-grid .aug-caption.main-cap {
+  .about-team .at-caption.main-cap {
     padding: 4.125rem 3.375rem;
   }
 }
 
-.about-us-grid .aug-caption.main-cap:after {
+.about-team .at-caption.main-cap:after {
   display: none;
 }
 
-.about-us-grid .aug-caption.main-cap:before {
+.about-team .at-caption.main-cap:before {
   display: none;
 }
 
-.about-us-grid .aug-caption .link-arrow-wrap {
+.about-team .at-caption .link-arrow-wrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5008,9 +5055,45 @@ blockquote:before {
   z-index: 10;
 }
 
-.about-us-grid .aug-caption .link-arrow-text {
+.about-team .at-caption .link-arrow-text {
   font-family: "Roboto", sans-serif;
   margin-left: 0;
+}
+
+.about-team .at-tab {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 813px) {
+  .about-team .at-tab {
+    display: none;
+  }
+}
+
+.about-team .at-tab li {
+  list-style: none;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.about-team .at-tab li.isShow {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.about-team .at-tab-btn {
+  display: block;
+  text-align: center;
+  font-weight: 500;
+  padding: 0.4375rem 0.625rem;
+  border-radius: 2px;
+  font-size: 15px;
+  border: 1px solid #000000;
 }
 
 
