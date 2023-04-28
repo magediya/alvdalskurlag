@@ -259,21 +259,27 @@ $bp in $breakpoints {
     &-uppercase{
         text-transform: uppercase;
     }
-    &-2xl{
-        font-size: 25px;
+    &-lg{
+        font-size: 1.125rem;
     }
-}
-
-.text{
+    &-2xl{
+        font-size: 1.5625rem;
+    }
     &-4xl{
-        font-size: 2.25rem;
+        font-size: 2.5rem;
     }
 }
 @include respond-above(md){
     .text{
         &-md{
+            &-4xl{
+                font-size: 2.5rem;
+            }
             &-lg{
                 font-size: 1.125rem;
+            }
+            &-xl{
+                font-size: 1.25rem;
             }
             &-5xl{
                 font-size: 3rem;
@@ -285,6 +291,10 @@ $bp in $breakpoints {
 @include respond-above(lg){
     .text{
         &-lg{
+            &-6xl{
+                font-size: 3.75rem;
+                line-height: 1.2;
+            }
             &-8xl{
                 font-size: 5rem;
                 line-height: 1.2;
@@ -319,6 +329,9 @@ $bp in $breakpoints {
 .bg{
     &-white{
         background-color: $color--white;
+    }
+    &-green{
+        background-color: $color--green-9;
     }
     &-product{
         &-1{
@@ -355,9 +368,22 @@ $bp in $breakpoints {
     .order-md-1 {
         order: 1;
     }
+    .order-md-first {
+        order: -1;
+    }
 }
 
 .mx-auto{
     margin-left: auto;
     margin-right: auto;
+}
+
+.relative {
+    position: relative;
+}
+
+.z{
+    &-10{
+        z-index: 10;
+    }
 }

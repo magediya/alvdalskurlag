@@ -13,6 +13,7 @@
   border: 1px solid $text-color;
   margin-top: 20px;
   transition: ease all 0.3s;
+  font-family: $font--roboto-mono;
 
   @include respond-below(sm) {
     padding: 12px 10px;
@@ -53,6 +54,21 @@
     }
   }
 
+  &-black {
+    border: 1px solid #000000;
+    color: #000000;
+
+    &:hover,
+    &:focus,
+    &.active {
+      cursor: pointer;
+      color: $text-color;
+      text-decoration: none;
+      background-color: #000000;
+    }
+  }
+
+
   &-grey-solid {
     border: 1px solid $color--grey-1;
     background-color: $color--grey-1;
@@ -78,6 +94,20 @@
       color: $color--green-9;
       text-decoration: none;
       background-color: $text-color;
+    }
+  }
+
+  &-white-solid {
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
+    color: #000000;
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      color: #ffffff;
+      text-decoration: none;
+      background-color: #000000;
     }
   }
 
@@ -123,4 +153,40 @@
       border-bottom: 1px solid $color--grey-1;
     }
   }
+}
+
+
+.link-arrow{
+  font-size: 42px;
+  width: 1em;
+  height: 1em;
+  border-radius: 100%;
+  border: 1px solid currentColor;
+  background: rgba(249, 249, 249, 0.21);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  color: #ffffff;
+  text-decoration: none;
+  
+  &-wrap{
+    display: inline-flex;
+    align-items: center;
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  &-text{
+    font-family: $font--roboto-mono;
+    font-size: 1.25rem;
+    flex: 1;
+    margin-left: .625rem;
+  }
+
+  .inline-arrow &,
+  .link-arrow-wrap &{
+      margin-top: 0;
+  }
+
 }

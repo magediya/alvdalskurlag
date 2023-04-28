@@ -4230,17 +4230,29 @@ h6,
   text-transform: uppercase;
 }
 
+.text-lg {
+  font-size: 1.125rem;
+}
+
 .text-2xl {
-  font-size: 25px;
+  font-size: 1.5625rem;
 }
 
 .text-4xl {
-  font-size: 2.25rem;
+  font-size: 2.5rem;
 }
 
 @media (min-width: 813px) {
+  .text-md-4xl {
+    font-size: 2.5rem;
+  }
+
   .text-md-lg {
     font-size: 1.125rem;
+  }
+
+  .text-md-xl {
+    font-size: 1.25rem;
   }
 
   .text-md-5xl {
@@ -4250,6 +4262,11 @@ h6,
 }
 
 @media (min-width: 1025px) {
+  .text-lg-6xl {
+    font-size: 3.75rem;
+    line-height: 1.2;
+  }
+
   .text-lg-8xl {
     font-size: 5rem;
     line-height: 1.2;
@@ -4286,6 +4303,10 @@ h6,
 
 .bg-white {
   background-color: #ffffff;
+}
+
+.bg-green {
+  background-color: #667631;
 }
 
 .bg-product-1 {
@@ -4330,11 +4351,25 @@ h6,
     -ms-flex-order: 1;
     order: 1;
   }
+
+  .order-md-first {
+    -webkit-box-ordinal-group: 0;
+    -ms-flex-order: -1;
+    order: -1;
+  }
 }
 
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+.relative {
+  position: relative;
+}
+
+.z-10 {
+  z-index: 10;
 }
 
 .breadcrumb {
@@ -4412,6 +4447,7 @@ h6,
   margin-top: 20px;
   -webkit-transition: ease all 0.3s;
   transition: ease all 0.3s;
+  font-family: "Roboto Mono", monospace;
 }
 
 @media (max-width: 640px) {
@@ -4457,6 +4493,20 @@ h6,
   background-color: #333333;
 }
 
+.btn-black {
+  border: 1px solid #000000;
+  color: #000000;
+}
+
+.btn-black:hover,
+.btn-black:focus,
+.btn-black.active {
+  cursor: pointer;
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #000000;
+}
+
 .btn-grey-solid {
   border: 1px solid #121212;
   background-color: #121212;
@@ -4483,6 +4533,20 @@ h6,
   color: #667631;
   text-decoration: none;
   background-color: #ffffff;
+}
+
+.btn-white-solid {
+  border: 1px solid #ffffff;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.btn-white-solid:hover,
+.btn-white-solid:focus {
+  cursor: pointer;
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #000000;
 }
 
 .btn-link {
@@ -4531,6 +4595,52 @@ h6,
 .btn-link-grey {
   color: #121212;
   border-bottom: 1px solid #121212;
+}
+
+.link-arrow {
+  font-size: 42px;
+  width: 1em;
+  height: 1em;
+  border-radius: 100%;
+  border: 1px solid currentColor;
+  background: rgba(249, 249, 249, 0.21);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 30px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.link-arrow-wrap {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.link-arrow-text {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.25rem;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin-left: 0.625rem;
+}
+
+.inline-arrow .link-arrow,
+.link-arrow-wrap .link-arrow {
+  margin-top: 0;
 }
 
 .site__header {
@@ -5304,28 +5414,6 @@ li.is-open .menu__caret:before {
   height: 100vh;
 }
 
-.page-banner:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 10.625rem;
-  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0)), color-stop(43.23%, rgba(0, 0, 0, 0.7)), to(#000000));
-  background: linear-gradient(360deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 43.23%, #000000 100%);
-}
-
-.page-banner:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 75%;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.7)));
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
-}
-
 .page-banner .pb-img {
   height: 100%;
   width: 100%;
@@ -5351,6 +5439,45 @@ li.is-open .menu__caret:before {
   -webkit-box-align: end;
   -ms-flex-align: end;
   align-items: flex-end;
+}
+
+.page-banner .pb-caption-left-bottom:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 10.625rem;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0)), color-stop(43.23%, rgba(0, 0, 0, 0.7)), to(#000000));
+  background: linear-gradient(360deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 43.23%, #000000 100%);
+}
+
+.page-banner .pb-caption-left-bottom:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 75%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.7)));
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+.page-banner .pb-caption-left-center {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.page-banner .pb-caption-left-center:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 70%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, right top, color-stop(58.33%, #000000), to(rgba(0, 0, 0, 0)));
+  background: linear-gradient(90deg, #000000 58.33%, rgba(0, 0, 0, 0) 100%);
 }
 
 .royal-treatment.banner .royal-treatment__card .royal-treatment__caption .royal-treatment__caption-bg {

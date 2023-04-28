@@ -17338,13 +17338,13 @@ $(document).ready(function ($) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\clients\spm\OTA\alvdalskurlag\src\js\main-home.js */"./src/js/main-home.js");
-__webpack_require__(/*! D:\clients\spm\OTA\alvdalskurlag\src\js\modules\hamburger-menu.js */"./src/js/modules/hamburger-menu.js");
-__webpack_require__(/*! D:\clients\spm\OTA\alvdalskurlag\src\js\modules\floating-window.js */"./src/js/modules/floating-window.js");
-__webpack_require__(/*! D:\clients\spm\OTA\alvdalskurlag\src\js\modules\plukkliste.js */"./src/js/modules/plukkliste.js");
-__webpack_require__(/*! D:\clients\spm\OTA\alvdalskurlag\src\scss\crucial.scss */"./src/scss/crucial.scss");
-__webpack_require__(/*! D:\clients\spm\OTA\alvdalskurlag\src\scss\main.scss */"./src/scss/main.scss");
-module.exports = __webpack_require__(/*! D:\clients\spm\OTA\alvdalskurlag\src\scss\cp.scss */"./src/scss/cp.scss");
+__webpack_require__(/*! /opt/homebrew/var/www/amici/shannon/html/alvdalskurlag/src/js/main-home.js */"./src/js/main-home.js");
+__webpack_require__(/*! /opt/homebrew/var/www/amici/shannon/html/alvdalskurlag/src/js/modules/hamburger-menu.js */"./src/js/modules/hamburger-menu.js");
+__webpack_require__(/*! /opt/homebrew/var/www/amici/shannon/html/alvdalskurlag/src/js/modules/floating-window.js */"./src/js/modules/floating-window.js");
+__webpack_require__(/*! /opt/homebrew/var/www/amici/shannon/html/alvdalskurlag/src/js/modules/plukkliste.js */"./src/js/modules/plukkliste.js");
+__webpack_require__(/*! /opt/homebrew/var/www/amici/shannon/html/alvdalskurlag/src/scss/crucial.scss */"./src/scss/crucial.scss");
+__webpack_require__(/*! /opt/homebrew/var/www/amici/shannon/html/alvdalskurlag/src/scss/main.scss */"./src/scss/main.scss");
+module.exports = __webpack_require__(/*! /opt/homebrew/var/www/amici/shannon/html/alvdalskurlag/src/scss/cp.scss */"./src/scss/cp.scss");
 
 
 /***/ })

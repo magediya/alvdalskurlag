@@ -24116,12 +24116,12 @@ $(document).ready(function ($) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\clients\spm\OTA\alvdalskurlag\src\js\main-products.js */"./src/js/main-products.js");
-__webpack_require__(/*! D:\clients\spm\OTA\alvdalskurlag\src\js\modules\hamburger-menu.js */"./src/js/modules/hamburger-menu.js");
-__webpack_require__(/*! D:\clients\spm\OTA\alvdalskurlag\src\js\modules\product-search.js */"./src/js/modules/product-search.js");
-__webpack_require__(/*! D:\clients\spm\OTA\alvdalskurlag\src\js\modules\product-detail.js */"./src/js/modules/product-detail.js");
-__webpack_require__(/*! D:\clients\spm\OTA\alvdalskurlag\src\js\modules\plukkliste.js */"./src/js/modules/plukkliste.js");
-module.exports = __webpack_require__(/*! D:\clients\spm\OTA\alvdalskurlag\src\js\modules\tabbing.js */"./src/js/modules/tabbing.js");
+__webpack_require__(/*! /opt/homebrew/var/www/amici/shannon/html/alvdalskurlag/src/js/main-products.js */"./src/js/main-products.js");
+__webpack_require__(/*! /opt/homebrew/var/www/amici/shannon/html/alvdalskurlag/src/js/modules/hamburger-menu.js */"./src/js/modules/hamburger-menu.js");
+__webpack_require__(/*! /opt/homebrew/var/www/amici/shannon/html/alvdalskurlag/src/js/modules/product-search.js */"./src/js/modules/product-search.js");
+__webpack_require__(/*! /opt/homebrew/var/www/amici/shannon/html/alvdalskurlag/src/js/modules/product-detail.js */"./src/js/modules/product-detail.js");
+__webpack_require__(/*! /opt/homebrew/var/www/amici/shannon/html/alvdalskurlag/src/js/modules/plukkliste.js */"./src/js/modules/plukkliste.js");
+module.exports = __webpack_require__(/*! /opt/homebrew/var/www/amici/shannon/html/alvdalskurlag/src/js/modules/tabbing.js */"./src/js/modules/tabbing.js");
 
 
 /***/ })

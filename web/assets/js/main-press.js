@@ -11317,9 +11317,9 @@ function log() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\clients\spm\OTA\alvdalskurlag\src\js\main-press.js */"./src/js/main-press.js");
-__webpack_require__(/*! D:\clients\spm\OTA\alvdalskurlag\src\js\modules\hamburger-menu.js */"./src/js/modules/hamburger-menu.js");
-module.exports = __webpack_require__(/*! D:\clients\spm\OTA\alvdalskurlag\src\js\modules\press-search.js */"./src/js/modules/press-search.js");
+__webpack_require__(/*! /opt/homebrew/var/www/amici/shannon/html/alvdalskurlag/src/js/main-press.js */"./src/js/main-press.js");
+__webpack_require__(/*! /opt/homebrew/var/www/amici/shannon/html/alvdalskurlag/src/js/modules/hamburger-menu.js */"./src/js/modules/hamburger-menu.js");
+module.exports = __webpack_require__(/*! /opt/homebrew/var/www/amici/shannon/html/alvdalskurlag/src/js/modules/press-search.js */"./src/js/modules/press-search.js");
 
 
 /***/ })

@@ -135,24 +135,6 @@
         }
     }
 }
-.link-arrow{
-    font-size: 42px;
-    width: 1em;
-    height: 1em;
-    border-radius: 100%;
-    border: 1px solid currentColor;
-    background: rgba(249, 249, 249, 0.21);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-    color: #ffffff;
-
-    .inline-arrow &{
-        margin-top: 0;
-    }
-
-}
 .product-banner{
     margin-top: 50px;
     margin-bottom: 50px;

@@ -1,16 +1,27 @@
 .product-grid{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 22px;
-    grid-auto-rows: minmax(100px, auto);
-
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+    @include respond-above(md){
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @include respond-above(xl){
+        gap: 1.375rem;        
+    }
+    
     .pg{
         &-card{
             position: relative;
-
-            &:first-child{
-                grid-column: 1 / 3;
+            border-radius: 5px;
+            overflow: hidden;
+            @include respond-below(md){
+                padding-top: 100%;
             }
+            @include respond-above(md){
+                &:first-child{
+                    grid-column: 1 / 3;
+                }
+            }            
 
             img{
                 display: block;
@@ -21,10 +32,124 @@
             bottom: 0;
             left: 0;
             width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
-
+            padding: 2rem;
+            @include respond-above(md){
+                padding: 3rem;
+            }
             @include respond-above(xl){
                 padding: 5rem;
+            }
+        }
+    }
+}
+
+// Inspiration Carousel
+.inspiration-carousel{
+    .ic{
+        &-caption{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 45.83%, #000000 100%);
+            padding: 1.25rem;
+
+            @include respond-above(lg){
+                padding: 2.5rem;
+            }
+        }
+    }
+}
+
+.about-us-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+
+    .aug{
+        &-cell{
+            position: relative;
+            border-radius:5px;
+            overflow: hidden;
+
+            img{
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+
+        &.oss{
+                grid-row: 1/4;
+                grid-column: 2/2;
+            }
+        }
+        &-caption{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 1.25rem;
+
+            @include respond-above(lg){
+                padding: 2.5rem;
+            }
+
+            &::before{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 60%;
+                height: 100%;
+                background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 61.98%, #000000 100%);
+            }
+            &::after{
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 30%;
+                height: 100%;
+                background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 71.35%);
+            }
+
+            &.main-cap{
+                height: auto;
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 47.92%, #000000 100%);
+                padding: 1.25rem;
+
+                @include respond-above(lg){
+                    padding: 4.125rem 3.375rem;
+                }
+
+                &:after{
+                    display: none;
+                }
+                &:before{
+                    display: none;
+                }
+            }
+
+            .link-arrow{
+                &-wrap{
+                    display: flex;
+                    width: 100%;
+                    position: relative;
+                    z-index: 10;
+                }
+                &-text{
+                    font-family: $font--roboto;
+                    margin-left: 0;
+                }
             }
         }
     }
