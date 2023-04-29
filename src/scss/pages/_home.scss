@@ -57,6 +57,7 @@
         .link-arrow{
             color: #000000;
             margin-top: 0;
+            cursor: pointer;
             
             + .link-arrow{
                 margin-left: 20px;
@@ -66,12 +67,20 @@
     .ic{
         &-card-image{
             position: relative;
+            border-radius: 5px;
+            overflow: hidden;
 
             &:before{
                 content: '';
                 padding-top: calc((650 / 480) * 100%);
                 display: block;
-
+                
+            }
+            
+            &.woodplate{
+                &:before{
+                    padding-top: calc((650 / 506) * 100%);
+                }
             }
             > img{
                 position: absolute;
@@ -93,6 +102,20 @@
             @include respond-above(lg){
                 padding: 2.5rem;
             }
+        }
+        &-plus{
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            background: rgba(249, 249, 249, 0.4);
+            font-size: 40px;
+            width: 1em;
+            height: 1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 100%;
+            cursor: pointer;
         }
     }
 }
@@ -210,9 +233,11 @@
                 display: block;
                 text-align: center;
                 font-weight: 500;
-                padding: .4375rem .625rem;
+                padding: .4375rem 0;
+                margin: .3125rem;
+                margin-bottom: 0;
                 border-radius: 2px;
-                font-size: 15px;
+                font-size: 14px;
                 border: 1px solid #000000;
             }
         }

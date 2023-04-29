@@ -4905,6 +4905,7 @@ blockquote:before {
 .inspiration-carousel-nav .link-arrow {
   color: #000000;
   margin-top: 0;
+  cursor: pointer;
 }
 
 .inspiration-carousel-nav .link-arrow + .link-arrow {
@@ -4913,12 +4914,18 @@ blockquote:before {
 
 .inspiration-carousel .ic-card-image {
   position: relative;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .inspiration-carousel .ic-card-image:before {
   content: "";
   padding-top: calc((650 / 480) * 100%);
   display: block;
+}
+
+.inspiration-carousel .ic-card-image.woodplate:before {
+  padding-top: calc((650 / 506) * 100%);
 }
 
 .inspiration-carousel .ic-card-image > img {
@@ -4945,6 +4952,27 @@ blockquote:before {
   .inspiration-carousel .ic-caption {
     padding: 2.5rem;
   }
+}
+
+.inspiration-carousel .ic-plus {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  background: rgba(249, 249, 249, 0.4);
+  font-size: 40px;
+  width: 1em;
+  height: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 100%;
+  cursor: pointer;
 }
 
 @media (min-width: 813px) {
@@ -5090,10 +5118,391 @@ blockquote:before {
   display: block;
   text-align: center;
   font-weight: 500;
-  padding: 0.4375rem 0.625rem;
+  padding: 0.4375rem 0;
+  margin: 0.3125rem;
+  margin-bottom: 0;
   border-radius: 2px;
-  font-size: 15px;
+  font-size: 14px;
   border: 1px solid #000000;
+}
+
+.treated-tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.treated-tabs .tt-tabbing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+@media (max-width: 812px) {
+  .treated-tabs .tt-tabbing {
+    -webkit-box-ordinal-group: 1000;
+    -ms-flex-order: 999;
+    order: 999;
+  }
+}
+
+.treated-tabs .tt-tabbing li {
+  list-style: none;
+  color: #000;
+}
+
+.treated-tabs .tt-tabbing li.isShow {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+@media (max-width: 812px) {
+  .treated-tabs .tt-tabbing li {
+    width: 50%;
+  }
+}
+
+.treated-tabs .tt-tabbing-btn {
+  display: block;
+  text-align: center;
+  font-weight: 500;
+  padding: 0.4375rem 1.5rem;
+  margin: 0.3125rem;
+  margin-top: 0;
+  border-radius: 2px;
+  font-size: 14px;
+  border: 1px solid #000000;
+  font-family: "Roboto Mono", monospace;
+  cursor: pointer;
+}
+
+@media (max-width: 812px) {
+  .treated-tabs .tt-tabbing-btn {
+    padding: 0.4375rem 0.5rem;
+    margin-top: 0.3125rem;
+    margin-bottom: 0;
+  }
+}
+
+.treated-tabs .tt-content {
+  width: 100%;
+}
+
+.treated-tabs .tt-content-row {
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.treated-tabs .tt-content-row:not(.isShow) {
+  display: none;
+}
+
+.treated-tabs .tt-content-row:before {
+  content: "";
+  display: block;
+  padding-top: 42%;
+}
+
+@media (max-width: 812px) {
+  .treated-tabs .tt-content-row:before {
+    padding-top: 0;
+    height: 400px;
+  }
+}
+
+.treated-tabs .tt-content-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.treated-tabs .tt-content-caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, right top, left top, color-stop(21.35%, rgba(0, 0, 0, 0)), color-stop(48.96%, rgba(0, 0, 0, 0.58)), to(#000000));
+  background: linear-gradient(270deg, rgba(0, 0, 0, 0) 21.35%, rgba(0, 0, 0, 0.58) 48.96%, #000000 100%);
+}
+
+@media (max-width: 812px) {
+  .treated-tabs .tt-content-caption {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(45.83%, #000000));
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 45.83%);
+  }
+}
+
+.treated-tabs .tt-content-caption-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+@media (max-width: 812px) {
+  .treated-tabs .tt-content-caption-label {
+    display: none;
+  }
+}
+
+@media (max-width: 812px) {
+  .cloth-type-carousel {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+}
+
+.cloth-type-carousel .ctc-card {
+  border-radius: 5px;
+  -webkit-box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2);
+  margin: 30px 10px;
+}
+
+.cloth-type-carousel .ctc-head {
+  padding: 30px;
+  border-bottom: 1px solid #000000;
+}
+
+@media (max-width: 812px) {
+  .cloth-type-carousel .ctc-head {
+    padding: 20px;
+  }
+}
+
+.cloth-type-carousel .ctc-img {
+  padding: 30px;
+  height: 250px;
+}
+
+@media (max-width: 812px) {
+  .cloth-type-carousel .ctc-img {
+    padding: 20px;
+  }
+}
+
+.cloth-type-carousel .ctc-img img {
+  max-height: 100%;
+  display: block;
+  margin: auto;
+}
+
+.cloth-type-carousel .ctc-detail {
+  padding: 30px;
+}
+
+@media (max-width: 812px) {
+  .cloth-type-carousel .ctc-detail {
+    padding: 20px;
+  }
+}
+
+.cloth-type-carousel .ctc-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.cloth-type-carousel .ctc-list li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 10px;
+}
+
+.cloth-type-carousel .ctc-list-tick {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: #F0F0F0;
+  border-radius: 5px;
+  position: relative;
+}
+
+.cloth-type-carousel .ctc-list-tick svg {
+  position: absolute;
+  right: -3px;
+  top: 3px;
+}
+
+.cloth-type-carousel .ctc-list-text {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-size: 12px;
+  font-family: "Roboto Mono", monospace;
+  margin-left: 10px;
+}
+
+.slick-dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.slick-dots li {
+  list-style: none;
+  margin-left: 4px;
+  margin-right: 4px;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.slick-dots li.slick-active button {
+  background-color: #7C7C7C;
+}
+
+.slick-dots button {
+  border-radius: 100%;
+  border-width: 0;
+  font-size: 0;
+  padding: 0;
+  margin: 0;
+  width: 6px;
+  height: 6px;
+  background-color: #DBDBDB;
+}
+
+.find-your-outfit .fyu-row {
+  border-top: 1px solid #000000;
+}
+
+@media (min-width: 1025px) {
+  .find-your-outfit .fyu-row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
+
+.find-your-outfit .fyu-col-left {
+  width: 250px;
+}
+
+.find-your-outfit .fyu-col-right {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (min-width: 1025px) {
+  .find-your-outfit .fyu-col-right {
+    padding-left: 30px;
+  }
+}
+
+@media (max-width: 1279px) {
+  .find-your-outfit .fyu-col-right {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .find-your-outfit .fyu-col-right {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.find-your-outfit .fyu-col-right .col {
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.find-your-outfit .fyu-checklist li {
+  list-style: none;
+  position: relative;
+}
+
+.find-your-outfit .fyu-checklist li input {
+  position: absolute;
+  opacity: 0;
+}
+
+.find-your-outfit .fyu-checklist li input:checked + .fyu-checklist-tick svg {
+  opacity: 100%;
+}
+
+.find-your-outfit .fyu-checklist label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #000000;
+  cursor: pointer;
+}
+
+.find-your-outfit .fyu-checklist-tick {
+  display: block;
+  width: 27px;
+  height: 27px;
+  border: 1px solid #000000;
+  position: relative;
+}
+
+.find-your-outfit .fyu-checklist-tick svg {
+  opacity: 0;
+  height: 25px;
+  width: 31px;
+  position: absolute;
+  top: 0px;
+  right: -6px;
+}
+
+.find-your-outfit .fyu-checklist-text {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-left: 10px;
 }
 
 

@@ -195,6 +195,33 @@ $(() => {
       }
     ]
   });
+  $('.cloth-type-carousel').slick({
+    slidesToShow: 4,
+    arrows: false,
+    dots:true,
+    responsive: [
+      {
+        breakpoint: 1600,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 821,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          centerMode: true,
+          centerPadding: '20px',
+        }
+      }
+    ]
+  });
 
   // tab
   $('.about-team .at-cell.at-tab-1').show();
@@ -202,6 +229,13 @@ $(() => {
     $('.about-team .at-cell').hide();
     $('.about-team .at-cell.'+$(this).attr('data-tab')).show();
     $('.at-tab li').not(this).removeClass('isShow');
+    $(this).addClass('isShow')
+  });
+
+  $('.treated-tabs .tt-tabbing li').on('click',function(){
+    $('.treated-tabs .tt-content-row').removeClass('isShow');
+    $('.treated-tabs .tt-content-row.'+$(this).attr('data-tab')).addClass('isShow');
+    $('.treated-tabs .tt-tabbing li').not(this).removeClass('isShow');
     $(this).addClass('isShow')
   });
 

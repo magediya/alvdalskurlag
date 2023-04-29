@@ -4232,27 +4232,33 @@ h6,
 
 .text-lg {
   font-size: 1.125rem;
+  line-height: 1.3;
 }
 
 .text-2xl {
   font-size: 1.5625rem;
+  line-height: 1.2;
 }
 
 .text-4xl {
   font-size: 2.5rem;
+  line-height: 1.2;
 }
 
 @media (min-width: 813px) {
-  .text-md-4xl {
-    font-size: 2.5rem;
-  }
-
   .text-md-lg {
     font-size: 1.125rem;
+    line-height: 1.2;
   }
 
   .text-md-xl {
     font-size: 1.25rem;
+    line-height: 1.2;
+  }
+
+  .text-md-4xl {
+    font-size: 2.5rem;
+    line-height: 1.2;
   }
 
   .text-md-5xl {
@@ -4262,6 +4268,16 @@ h6,
 }
 
 @media (min-width: 1025px) {
+  .text-lg-2xl {
+    font-size: 1.5625rem;
+    line-height: 1.2;
+  }
+
+  .text-lg-4xl {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
   .text-lg-6xl {
     font-size: 3.75rem;
     line-height: 1.2;
@@ -4307,6 +4323,10 @@ h6,
 
 .bg-green {
   background-color: #667631;
+}
+
+.bg-grey-8 {
+  background-color: #F0F0F0;
 }
 
 .bg-product-1 {
@@ -4370,6 +4390,18 @@ h6,
 
 .z-10 {
   z-index: 10;
+}
+
+.list-unstyled {
+  list-style: none;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+.border-b {
+  border-bottom: 1px solid #000000;
 }
 
 .breadcrumb {
@@ -5411,6 +5443,11 @@ li.is-open .menu__caret:before {
 
 .page-banner {
   position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.page-banner:not(.intrinsic-size) {
   height: 100vh;
 }
 
@@ -5419,6 +5456,7 @@ li.is-open .menu__caret:before {
   width: 100%;
   -o-object-fit: cover;
   object-fit: cover;
+  display: block;
 }
 
 .page-banner .pb-caption {
@@ -5480,25 +5518,44 @@ li.is-open .menu__caret:before {
   background: linear-gradient(90deg, #000000 58.33%, rgba(0, 0, 0, 0) 100%);
 }
 
-.page-banner.changemobile .pb-caption-left-center {
+.page-banner .pb-caption-start-bottom {
   -webkit-box-align: end;
   -ms-flex-align: end;
   align-items: flex-end;
-  padding-bottom: 60px;
 }
 
-.page-banner.changemobile .pb-caption-left-center:before {
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(58.33%, #000000), to(rgba(0, 0, 0, 0)));
-  background: linear-gradient(360deg, #000000 58.33%, rgba(0, 0, 0, 0) 100%);
-  width: 100%;
-  height: 50%;
-  top: auto;
-  bottom: 0;
+.page-banner .pb-caption-start-bottom:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 70%;
+  height: 100%;
+  background: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0)), color-stop(69.79%, rgba(0, 0, 0, 0.7)));
+  background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 69.79%);
 }
 
-.page-banner.changemobile .pb-img {
-  -o-object-position: right;
-  object-position: right;
+@media (max-width: 812px) {
+  .page-banner.changemobile .pb-caption-left-center {
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    padding-bottom: 60px;
+  }
+
+  .page-banner.changemobile .pb-caption-left-center:before {
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(58.33%, #000000), to(rgba(0, 0, 0, 0)));
+    background: linear-gradient(360deg, #000000 58.33%, rgba(0, 0, 0, 0) 100%);
+    width: 100%;
+    height: 50%;
+    top: auto;
+    bottom: 0;
+  }
+
+  .page-banner.changemobile .pb-img {
+    -o-object-position: right;
+    object-position: right;
+  }
 }
 
 .royal-treatment.banner .royal-treatment__card .royal-treatment__caption .royal-treatment__caption-bg {

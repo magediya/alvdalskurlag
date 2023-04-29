@@ -131,13 +131,19 @@
 
 .page-banner{
     position: relative;
-    height: 100vh;
+    border-radius: 5px;
+    overflow: hidden;
+    
+    &:not(.intrinsic-size){
+        height: 100vh;
+    }
     
     .pb{
         &-img{
             height: 100%;
             width: 100%;
             object-fit: cover;
+            display: block;
         }
         &-caption{
             position: absolute;
@@ -182,25 +188,39 @@
                 }
                 align-items: center;
             }
+            &-start-bottom{
+                &:before{
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 70%;
+                    height:100%;
+                    background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 69.79%);
+                }
+                align-items: flex-end;
+            }
         }
     }
 
-    &.changemobile{
-        .pb-caption-left-center{
-            align-items: flex-end;
-            padding-bottom: 60px;
-
-            &:before{
-                background: linear-gradient(360deg, #000000 58.33%, rgba(0, 0, 0, 0) 100%);
-                width: 100%;
-                height: 50%;
-                top: auto;
-                bottom: 0;
+    @include respond-below(md){
+        &.changemobile{
+            .pb-caption-left-center{
+                align-items: flex-end;
+                padding-bottom: 60px;
+    
+                &:before{
+                    background: linear-gradient(360deg, #000000 58.33%, rgba(0, 0, 0, 0) 100%);
+                    width: 100%;
+                    height: 50%;
+                    top: auto;
+                    bottom: 0;
+                }
+    
             }
-
-        }
-        .pb-img{
-            object-position: right;
+            .pb-img{
+                object-position: right;
+            }
         }
     }
 }
