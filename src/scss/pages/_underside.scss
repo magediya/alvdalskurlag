@@ -327,3 +327,122 @@
         }
     }
 }
+
+
+.before-after-view {
+  .bav{
+    &-container {
+        position: relative;
+        overflow: hidden;
+        border-radius: 5px;
+        --position: 50%;
+    }
+    &-images{
+        &:before{
+            content: '';
+            display: block;
+            padding-top: calc((504/735) * 100%);
+        }
+    }
+    &-slider {
+      position: absolute;
+      inset: 0;
+      cursor: pointer;
+      opacity: 0;
+      /* for Firefox */
+      width: 100%;
+      height: 100%;
+
+      &-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: left;
+      }
+      
+      &:focus-visible ~ .slider-button {
+        outline: 5px solid black;
+        outline-offset: 3px;
+      }
+      
+      &-line {
+        position: absolute;
+        inset: 0;
+        width: .2rem;
+        height: 100%;
+        background-color: #fff;
+        /* z-index: 10; */
+        left: var(--position);
+        transform: translateX(-50%);
+        pointer-events: none;
+      }
+      
+      &-button {
+        position: absolute;
+        background-color: #fff;
+        color: black;
+        width: 42px;
+        height: 42px;
+        border-radius: 100%;
+        display: grid;
+        place-items: center;
+        top: 50%;
+        left: var(--position);
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        z-index: 10;
+        box-shadow: 1px 1px 1px hsl(0, 50%, 2%, .5);
+      }
+    }
+    &-image{
+        &-before {
+            position: absolute;
+            inset: 0;
+            width: var(--position);
+            filter: grayscale(100%);
+            pointer-events: none;
+            z-index: 9;
+        }
+        &-after{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    &-label{
+        top: 30px;
+        left: 30px;
+        z-index: 99;
+        position: absolute;
+        width: 99px;
+        padding: 4px;
+        background: rgba(249, 249, 249, 0.21);
+        border: 1px solid #FFFFFF;
+        border-radius: 2px;
+        font-family: $font--roboto-mono;
+        font-weight: 300;
+        font-size: 12px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #FFFFFF
+    }
+    &-directiopn{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.25rem;
+        color: #ffffff;
+        padding-right: 30px;
+        padding-left: 30px;
+        z-index: 99;
+        pointer-events: none;
+    }
+  }
+}
+
+

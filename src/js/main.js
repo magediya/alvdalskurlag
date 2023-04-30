@@ -253,4 +253,9 @@ $(() => {
 		 $(this).stop().toggleClass('isCollapsed');
 		 $(this).next().stop().slideToggle();
 	});
+
+  const container = document.querySelector('.bav-container');
+  document.querySelector('.bav-slider').addEventListener('input', (e) => {
+    container.style.setProperty('--position', `${e.target.value}%`);
+  })
 });

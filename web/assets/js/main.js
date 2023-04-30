@@ -23578,6 +23578,10 @@ $(function () {
     $(this).stop().toggleClass('isCollapsed');
     $(this).next().stop().slideToggle();
   });
+  var container = document.querySelector('.bav-container');
+  document.querySelector('.bav-slider').addEventListener('input', function (e) {
+    container.style.setProperty('--position', "".concat(e.target.value, "%"));
+  });
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js?d0be")))
 
