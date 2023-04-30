@@ -23525,6 +23525,7 @@ $(function () {
     }, {
       breakpoint: 480,
       settings: {
+        dots: true,
         centerPadding: '40px',
         slidesToShow: 1
       }
@@ -23572,6 +23573,10 @@ $(function () {
   });
   $(".next-btn").on('click', function () {
     $('.inspiration-carousel').slick("slickNext");
+  });
+  $(".faqs .faq-title").on('click', function () {
+    $(this).stop().toggleClass('isCollapsed');
+    $(this).next().stop().slideToggle();
   });
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js?d0be")))

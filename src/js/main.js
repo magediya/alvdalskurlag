@@ -189,12 +189,14 @@ $(() => {
       {
         breakpoint: 480,
         settings: {
+          dots:true,
           centerPadding: '40px',
           slidesToShow: 1
         }
       }
     ]
   });
+
   $('.cloth-type-carousel').slick({
     slidesToShow: 4,
     arrows: false,
@@ -245,5 +247,10 @@ $(() => {
 
 	$(".next-btn").on('click',function(){
 		 $('.inspiration-carousel').slick("slickNext");
+	});
+
+	$(".faqs .faq-title").on('click',function(){
+		 $(this).stop().toggleClass('isCollapsed');
+		 $(this).next().stop().slideToggle();
 	});
 });

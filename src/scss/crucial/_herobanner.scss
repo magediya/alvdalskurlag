@@ -137,13 +137,29 @@
     &:not(.intrinsic-size){
         height: 100vh;
     }
+    &.intrinsic-size{
+        min-height: 400px;
+    }
     
     .pb{
+        &-badge{
+            position: absolute;
+            top: 0;
+            width: 100%;
+            right: 0;
+            z-index: 99;
+
+            img{
+                display: block;
+                margin-left: auto;
+            }
+        }
         &-img{
             height: 100%;
             width: 100%;
             object-fit: cover;
             display: block;
+            min-height: inherit;
         }
         &-caption{
             position: absolute;

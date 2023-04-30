@@ -287,3 +287,43 @@
         }
     }
 }
+
+.faqs{
+    .faq{
+        &-title{
+            border-bottom: 1px solid #000000;
+            padding-top: 23px;
+            padding-bottom: 23px;
+            @include respond-below(md){
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+            }
+
+            &.isCollapsed{
+                .menu__caret{
+                    &:after{
+                        opacity: 0;
+                        transform: rotate(0);
+                    }
+                }
+            }
+        }
+        &-arrow{
+            .menu__caret{
+                position: relative;
+                border-color: #000000;
+                font-size: 42px;
+                right: 0;
+
+                @include respond-below(md){
+                    font-size: 24px;
+                }
+
+                &:before,
+                &:after{
+                    background-color: #000000;
+                }
+            }
+        }
+    }
+}

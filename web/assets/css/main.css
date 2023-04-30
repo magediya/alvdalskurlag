@@ -4822,13 +4822,32 @@ blockquote:before {
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
   gap: 1rem;
 }
 
+.product-grid-home .product-grid {
+  grid-template-columns: repeat(1, 1fr);
+}
+
 @media (min-width: 813px) {
-  .product-grid {
+  .product-grid-home .product-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.product-grid-related .product-grid {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 813px) {
+  .product-grid-related .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .product-grid-related .product-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -4851,7 +4870,13 @@ blockquote:before {
 }
 
 @media (min-width: 813px) {
-  .product-grid .pg-card:first-child {
+  .product-grid-related .product-grid .pg-card {
+    padding-top: calc((650 / 480) * 100%);
+  }
+}
+
+@media (min-width: 813px) {
+  .product-grid-home .product-grid .pg-card:first-child {
     grid-column: 1/3;
   }
 }
@@ -4878,22 +4903,41 @@ blockquote:before {
   justify-content: space-between;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.7)));
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+.product-grid-home .product-grid .pg-caption {
   padding: 2rem;
 }
 
 @media (min-width: 813px) {
-  .product-grid .pg-caption {
+  .product-grid-home .product-grid .pg-caption {
     padding: 3rem;
   }
 }
 
 @media (min-width: 1280px) {
-  .product-grid .pg-caption {
+  .product-grid-home .product-grid .pg-caption {
     padding: 5rem;
   }
 }
 
-.inspiration-carousel-nav {
+.product-grid-related .product-grid .pg-caption {
+  padding: 1.375rem;
+}
+
+@media (min-width: 813px) {
+  .product-grid-related .product-grid .pg-caption {
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .product-grid-related .product-grid .pg-caption {
+    padding: 3.375rem;
+  }
+}
+
+.inspiration-cards-nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4902,33 +4946,33 @@ blockquote:before {
   justify-content: flex-end;
 }
 
-.inspiration-carousel-nav .link-arrow {
+.inspiration-cards-nav .link-arrow {
   color: #000000;
   margin-top: 0;
   cursor: pointer;
 }
 
-.inspiration-carousel-nav .link-arrow + .link-arrow {
+.inspiration-cards-nav .link-arrow + .link-arrow {
   margin-left: 20px;
 }
 
-.inspiration-carousel .ic-card-image {
+.inspiration-cards .ic-card-image {
   position: relative;
   border-radius: 5px;
   overflow: hidden;
 }
 
-.inspiration-carousel .ic-card-image:before {
+.inspiration-cards .ic-card-image:before {
   content: "";
   padding-top: calc((650 / 480) * 100%);
   display: block;
 }
 
-.inspiration-carousel .ic-card-image.woodplate:before {
+.inspiration-cards .ic-card-image.woodplate:before {
   padding-top: calc((650 / 506) * 100%);
 }
 
-.inspiration-carousel .ic-card-image > img {
+.inspiration-cards .ic-card-image > img {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -4938,7 +4982,7 @@ blockquote:before {
   object-fit: cover;
 }
 
-.inspiration-carousel .ic-caption {
+.inspiration-cards .ic-caption {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -4949,12 +4993,12 @@ blockquote:before {
 }
 
 @media (min-width: 1025px) {
-  .inspiration-carousel .ic-caption {
+  .inspiration-cards .ic-caption {
     padding: 2.5rem;
   }
 }
 
-.inspiration-carousel .ic-plus {
+.inspiration-cards .ic-plus {
   position: absolute;
   top: 40px;
   right: 40px;
@@ -5042,7 +5086,7 @@ blockquote:before {
   background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 61.98%, #000000 100%);
 }
 
-.about-team .at-caption::after {
+.about-team .at-caption:after {
   content: "";
   position: absolute;
   top: 0;
@@ -5053,11 +5097,33 @@ blockquote:before {
   background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 71.35%);
 }
 
+.about-team .at-caption-eyebrow-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 0.625rem;
+  padding-left: 1.25rem;
+  font-size: 18px;
+  font-family: "Roboto Mono", monospace;
+}
+
+@media (min-width: 1025px) {
+  .about-team .at-caption-eyebrow-text {
+    font-size: 20px;
+    padding: 2.5rem;
+  }
+}
+
 .about-team .at-caption.main-cap {
   height: auto;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(47.92%, rgba(0, 0, 0, 0.7)), to(#000000));
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 47.92%, #000000 100%);
   padding: 2.125rem 1.25rem;
+  height: 100%;
+  overflow: auto;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
 }
 
 @media (min-width: 1025px) {
@@ -5086,6 +5152,12 @@ blockquote:before {
 .about-team .at-caption .link-arrow-text {
   font-family: "Roboto", sans-serif;
   margin-left: 0;
+}
+
+@media (min-width: 1025px) {
+  .about-team .at-caption .link-arrow-text {
+    font-size: 2.5rem;
+  }
 }
 
 .about-team .at-tab {
@@ -5124,6 +5196,24 @@ blockquote:before {
   border-radius: 2px;
   font-size: 14px;
   border: 1px solid #000000;
+}
+
+.inspiration-cta.has-bg-img {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.inspiration-cta.has-bg-img:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 60%;
+  height: 100%;
+  background: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0)), color-stop(44.79%, rgba(0, 0, 0, 0.7)), color-stop(86.46%, #000000));
+  background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 44.79%, #000000 86.46%);
 }
 
 .treated-tabs {
@@ -5503,6 +5593,43 @@ blockquote:before {
   -ms-flex: 1;
   flex: 1;
   padding-left: 10px;
+}
+
+.faqs .faq-title {
+  border-bottom: 1px solid #000000;
+  padding-top: 23px;
+  padding-bottom: 23px;
+}
+
+@media (max-width: 812px) {
+  .faqs .faq-title {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+.faqs .faq-title.isCollapsed .menu__caret:after {
+  opacity: 0;
+  -webkit-transform: rotate(0);
+  transform: rotate(0);
+}
+
+.faqs .faq-arrow .menu__caret {
+  position: relative;
+  border-color: #000000;
+  font-size: 42px;
+  right: 0;
+}
+
+@media (max-width: 812px) {
+  .faqs .faq-arrow .menu__caret {
+    font-size: 24px;
+  }
+}
+
+.faqs .faq-arrow .menu__caret:before,
+.faqs .faq-arrow .menu__caret:after {
+  background-color: #000000;
 }
 
 

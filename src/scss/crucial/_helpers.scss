@@ -407,6 +407,11 @@ $bp in $breakpoints {
     }
 }
 
+.w{
+    &-full{
+        width: 100%;
+    }
+}
 .list-unstyled{list-style: none;}
 .no-underline{text-decoration: none;}
 .border-b{border-bottom: 1px solid #000000;}

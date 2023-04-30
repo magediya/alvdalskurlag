@@ -1,6 +1,6 @@
 /* buttons */
 .btn {
-  display: inline-block;
+  display: inline-flex;
   padding: 12px 33px;
   vertical-align: top;
   color: $text-color;
@@ -169,6 +169,10 @@
   margin-top: 30px;
   color: #ffffff;
   text-decoration: none;
+
+  &.text-black{
+    color: #000000;
+  }
   
   &-wrap{
     display: inline-flex;
@@ -182,6 +186,9 @@
     font-size: 1.25rem;
     flex: 1;
     margin-left: .625rem;
+    &.text-black{
+      color: #000000;
+    }  
   }
 
   .inline-arrow &,

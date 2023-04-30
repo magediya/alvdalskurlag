@@ -4392,6 +4392,10 @@ h6,
   z-index: 10;
 }
 
+.w-full {
+  width: 100%;
+}
+
 .list-unstyled {
   list-style: none;
 }
@@ -4465,7 +4469,9 @@ h6,
 /* buttons */
 
 .btn {
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   padding: 12px 33px;
   vertical-align: top;
   color: #ffffff;
@@ -4650,6 +4656,10 @@ h6,
   text-decoration: none;
 }
 
+.link-arrow.text-black {
+  color: #000000;
+}
+
 .link-arrow-wrap {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -4668,6 +4678,10 @@ h6,
   -ms-flex: 1;
   flex: 1;
   margin-left: 0.625rem;
+}
+
+.link-arrow-text.text-black {
+  color: #000000;
 }
 
 .inline-arrow .link-arrow,
@@ -5451,12 +5465,30 @@ li.is-open .menu__caret:before {
   height: 100vh;
 }
 
+.page-banner.intrinsic-size {
+  min-height: 400px;
+}
+
+.page-banner .pb-badge {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  right: 0;
+  z-index: 99;
+}
+
+.page-banner .pb-badge img {
+  display: block;
+  margin-left: auto;
+}
+
 .page-banner .pb-img {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
   object-fit: cover;
   display: block;
+  min-height: inherit;
 }
 
 .page-banner .pb-caption {
