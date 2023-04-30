@@ -5467,6 +5467,7 @@ blockquote:before {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin-top: 10px;
 }
 
 .slick-dots li {
@@ -5754,6 +5755,18 @@ blockquote:before {
   padding-left: 30px;
   z-index: 99;
   pointer-events: none;
+}
+
+@media (max-width: 812px) {
+  .colors-list-new .colors-list__circle {
+    width: 37px !important;
+    height: 37px !important;
+    background-size: 225px;
+  }
+
+  .colors-list-new li {
+    width: 20% !important;
+  }
 }
 
 

@@ -177,6 +177,7 @@
 .slick-dots{
     display: flex;
     justify-content: center;
+    margin-top: 10px;
     
     li{
         list-style: none;
@@ -445,4 +446,16 @@
   }
 }
 
-
+@include respond-below(md){
+    .colors-list-new{
+        .colors-list__circle{
+            width: 37px !important;
+            height: 37px !important;
+            background-size: 225px;
+            
+        }
+        li{
+            width: 20% !important;
+        }
+    }
+}
